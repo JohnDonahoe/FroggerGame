@@ -10,7 +10,7 @@ import com.example.m1.R;
 import android.widget.*;
 
 public class ConfigScreen extends AppCompatActivity implements View.OnClickListener {
-    protected Game game;
+    protected static Game game;
     private Button nameButton, start;
     private RadioButton easy, medium, hard, red, blue, green;
     private EditText enterNameBox;
