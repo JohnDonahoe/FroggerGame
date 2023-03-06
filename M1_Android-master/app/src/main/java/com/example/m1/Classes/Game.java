@@ -17,34 +17,47 @@ public class Game {
         this(null, null, 0, null);
     }
 
+    // Returns: name as string
     public String getName() {
         return this.name
     }
 
+    //Returns: difficulty as string
     public String getDifficulty() {
         return this.difficulty;
     }
 
+    //Returns: lives as int
     public int getLives() {
         return this.lives;
     }
 
+    //Returns: frog as Frog
     public Frog getFrog() {
         return this.frog;
     }
 
+    //Returns: score as int
     public int getScore() {
         return this.score;
     }
 
+    //  Sets the user's name
+    //  Parameters: String name (to be set to)
+    //  Returns:    true if the name is null or length is 0
+    //              false if the name is valid
     public boolean setName(String name) {
-        if (name == null || name.length() == 0) {
-            return false
+        if (name == null || name.strip().length() == 0) {
+            return false;
         }
         this.name = name;
-        return true
+        return true;
     }
 
+    //  Sets the game's difficulty
+    //  Parameters: String difficulty (to be set to)
+    //  Returns:    true if name was set
+    //              false if difficulty was not set
     public boolean setDifficulty(String difficulty) {
         if (difficulty.equals("Easy")) {
             this.difficulty = "Easy";
@@ -61,6 +74,8 @@ public class Game {
         return true;
     }
 
+    //  Set's the game's frog
+    //  Parameters: Frog frog (to be set to)
     public void setFrog(Frog frog) {
         this.frog = frog;
     }

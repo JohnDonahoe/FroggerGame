@@ -1,4 +1,5 @@
 package com.example.m1.Screens;
+package com.example.m1.Classes;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,12 +8,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.m1.R;
 import android.widget.*;
 
-public class ConfigScreen extends AppCompatActivity {
+public class ConfigScreen extends AppCompatActivity implements View.OnClickListener {
     protected Game game;
     private Button nameButton, start;
     private RadioButton easy, medium, hard, red, blue, green;
     private EditText enterNameBox;
     private textView error;
+
+    private boolean nameSet, difficultySet, frogSet;
     protected void onCreate(Bundle int) {
         super.onCreate(init);
         setContentView(R.layout.config_screen);
@@ -43,7 +46,53 @@ public class ConfigScreen extends AppCompatActivity {
         Button start = (Button) findViewById(R.id.button2);
         start.setOnClickListener(this);
 
-
         error = (TextView) findViewById(R.id.textView7);
+
+        nameSet = false;
+        difficultySet = false;
+        frogSet = false;
+    }
+
+    public void onClick(View view) {
+        switch(view.getId()) {
+            case R.id.button3:              //Name Button
+                nameSet = game.setName(enterNameBox.getText().toString());
+                if (!nameSet) {
+                    error.setText("Please set a name")
+                }
+                break;
+            case R.id.radioButton3:         //Easy Button
+                difficultySet = game.setDifficulty("Easy");
+                break;
+            case R.id.radioButton4:         //Medium Button
+                difficultySet = game.setDifficulty("Medium");
+                break;
+            case R.id.radioButton5:         //Hard Button
+                difficultySet = game.setDifficulty("Hard");
+                break;
+            case R.id.radioButton12:        //Red Frog Button
+                game.setFrog(new Frog("Red", 0, 0, 0, 0));
+                frogSet = true;
+                break;
+            case R.id.radioButton13:        //Blue Frog Button
+                game.setFrog(new Frog("Blue", 0, 0, 0, 0));
+                frogSet = true;
+                break;
+            case R.id.radioButton14:        //Green Frog Button
+                game.setFrog(new Frog("Green", 0, 0, 0, 0));
+                frogSet = true;
+                break;
+            case R.id.radioButton2:         //Start Button
+                if (nameSet && frogSet && difficultySet) {
+                    openGameScreen();
+                }
+                break;
+        }
+    }
+
+    public void openGameScreen() {
+        Intent intent = new Intent(getApplicationContext(), GameScreen.class);
+        startActivity(intent);
+        setContentView(R.layout.game_screen);
     }
 }
