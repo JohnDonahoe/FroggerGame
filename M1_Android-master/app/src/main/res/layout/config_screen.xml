@@ -1,21 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
-                                                   xmlns:tools="http://schemas.android.com/tools"
-                                                   android:layout_width="match_parent"
-                                                   android:layout_height="match_parent"
-                                                   tools:context=".Screens.ConfigScreen">
+    xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-
+    <RadioGroup
+        android:layout_width="124dp"
+        android:layout_height="146dp"
+        android:id="@+id/radioGroup"
+        android:layout_marginTop="19dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="143dp">
+        <RadioButton
+            android:text="Easy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/radioButton3"/>
+        <RadioButton
+            android:text="Medium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/radioButton4"/>
+        <RadioButton
+            android:text="Hard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/radioButton5"/>
+    </RadioGroup>
     <Button
-            android:id="@+id/startButton"
-            android:layout_width="184dp"
-            android:layout_height="75dp"
-            android:text="Start"
-            android:layout_marginEnd="115dp"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="112dp" app:layout_constraintHorizontal_bias="1.0"
-            tools:layout_editor_absoluteY="581dp"/>
-
-
+        android:text="Start Game!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/button2"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup2" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="137dp"/>
+    <EditText
+        android:layout_width="184dp"
+        android:layout_height="49dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="44dp" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="112dp" android:hint="Enter Character Name"/>
+    <TextView
+        android:text="Select Difficulty"
+        android:layout_width="wrap_content"
+        android:textSize="32sp"
+        android:layout_height="wrap_content" android:id="@+id/textView2"
+        android:layout_marginTop="14dp"
+        app:layout_constraintTop_toBottomOf="@+id/button3" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="96dp"/>
+    <RadioGroup
+        android:layout_width="128dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="141dp" android:id="@+id/radioGroup2">
+        <RadioButton
+            android:text="Red"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" android:id="@+id/radioButton12"/>
+        <RadioButton
+            android:text="Blue"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" android:id="@+id/radioButton13"/>
+        <RadioButton
+            android:text="Green"
+            android:layout_width="match_parent"
+            android:layout_height="45dp" android:id="@+id/radioButton14"/>
+    </RadioGroup>
+    <TextView
+        android:text="Select Color"
+        android:layout_width="wrap_content"
+        android:textSize="32sp"
+        android:layout_height="wrap_content" android:id="@+id/textView6"
+        android:layout_marginTop="24dp"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="119dp"/>
+    <Button
+        android:text="Set Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/button3"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="150dp"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:id="@+id/textView7"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="175dp"
+        app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="691dp"/>
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="45dp" app:srcCompat="@drawable/pngfind_com_frogger_png_5284221"
+        android:id="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="86dp"
+        android:layout_marginTop="60dp" app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroup2" android:layout_marginEnd="4dp"/>
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp" app:srcCompat="@drawable/pngwing_com" android:id="@+id/imageView2"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="87dp"/>
+    <ImageView
+        android:layout_width="49dp"
+        android:layout_height="45dp" app:srcCompat="@drawable/redfrogger" android:id="@+id/imageView3"
+        android:layout_marginTop="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="87dp"/>
+    android:orientation="horizontal"
 </androidx.constraintlayout.widget.ConstraintLayout>
