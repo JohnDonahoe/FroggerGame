@@ -1,3 +1,5 @@
+package com.example.m1.Classes;
+
 public class Game {
     private String name;
     private String difficulty;
@@ -19,7 +21,7 @@ public class Game {
 
     // Returns: name as string
     public String getName() {
-        return this.name
+        return this.name;
     }
 
     //Returns: difficulty as string
@@ -47,7 +49,7 @@ public class Game {
     //  Returns:    true if the name is null or length is 0
     //              false if the name is valid
     public boolean setName(String name) {
-        if (name == null || name.strip().length() == 0) {
+        if (name == null || name.trim().length() == 0) {
             return false;
         }
         this.name = name;

@@ -1,10 +1,11 @@
 package com.example.m1.Screens;
-package com.example.m1.Classes;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.m1.Classes.*;
 import com.example.m1.R;
 import android.widget.*;
 
@@ -13,10 +14,10 @@ public class ConfigScreen extends AppCompatActivity implements View.OnClickListe
     private Button nameButton, start;
     private RadioButton easy, medium, hard, red, blue, green;
     private EditText enterNameBox;
-    private textView error;
+    private TextView error;
 
     private boolean nameSet, difficultySet, frogSet;
-    protected void onCreate(Bundle int) {
+    protected void onCreate(Bundle init) {
         super.onCreate(init);
         setContentView(R.layout.config_screen);
         init();
@@ -58,7 +59,7 @@ public class ConfigScreen extends AppCompatActivity implements View.OnClickListe
             case R.id.button3:              //Name Button
                 nameSet = game.setName(enterNameBox.getText().toString());
                 if (!nameSet) {
-                    error.setText("Please set a name")
+                    error.setText("Please set a name");
                 }
                 break;
             case R.id.radioButton3:         //Easy Button
@@ -82,7 +83,7 @@ public class ConfigScreen extends AppCompatActivity implements View.OnClickListe
                 game.setFrog(new Frog("Green", 0, 0, 0, 0));
                 frogSet = true;
                 break;
-            case R.id.radioButton2:         //Start Button
+            case R.id.button2:         //Start Button
                 if (nameSet && frogSet && difficultySet) {
                     openGameScreen();
                 }

@@ -1,3 +1,5 @@
+package com.example.m1.Classes;
+
 import android.graphics.Rect;
 
 public class Frog {
