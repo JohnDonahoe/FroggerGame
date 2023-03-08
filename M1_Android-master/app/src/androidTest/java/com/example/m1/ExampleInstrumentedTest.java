@@ -23,4 +23,11 @@ public class ExampleInstrumentedTest {
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
         assertEquals("com.example.m1", appContext.getPackageName());
     }
+
+    @Test
+    public void testDifficulty() {
+        Game game = new Game();
+        game.setDifficulty("Easy");
+        assertEquals()
+    }
 }
