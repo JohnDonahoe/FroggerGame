@@ -47,12 +47,16 @@ public class GameScreen extends AppCompatActivity {
         difficulty.setText(game.getDifficulty());
         name.setText(game.getName());
         lives.setText(Integer.toString(game.getLives()));
-        builtBitmap();
+
+        GameHandler game_handler = new Game_Handler(game);
+
+        View map = findViewById(R.id.map);
+        v.draw(game.draw_map());
     }
 
-    private void builtBitmap() {
-        bitmap = Bitmap.createBitmap(1080, 1080, Bitmap.Config.ARGB_8888);
-        canvas = new Canvas(bitmap);
-        gameViewing.setImageBitmap(bitmap);
-    }
+    //private void builtBitmap() {
+        //bitmap = Bitmap.createBitmap(1080, 1080, Bitmap.Config.ARGB_8888);
+        //canvas = new Canvas(bitmap);
+       // gameViewing.setImageBitmap(bitmap);
+   // }
 }
