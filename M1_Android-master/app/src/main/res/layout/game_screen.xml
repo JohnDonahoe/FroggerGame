@@ -117,10 +117,10 @@
             />
         </LinearLayout>
 
-        <ImageView android:layout_columnWeight="1"
-                   android:layout_rowWeight="1" android:id="@+id/gameImage">
+        <View android:layout_columnWeight="1"
+                   android:layout_rowWeight="1" android:id="@+id/map">
 
-        </ImageView>
+        </View>
 
 
     </GridLayout>
