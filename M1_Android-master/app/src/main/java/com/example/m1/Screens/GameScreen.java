@@ -59,4 +59,22 @@ public class GameScreen extends AppCompatActivity {
         //canvas = new Canvas(bitmap);
        // gameViewing.setImageBitmap(bitmap);
    // }
+
+    @Override
+    public boolean onKeyDown(int KeyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_UP:
+                game.getFrog().moveUp();
+                // Draw frog at new position
+            case KeyEvent.KEYCODE_DOWN:
+                game.getFrog().moveDown();
+                // Draw frog at new position
+            case KeyEvent.KEYCODE_LEFT:
+                game.getFrog().moveLeft();
+                // Draw frog at new position
+            case KeyEvent.KEYCODE_RIGHT:
+                game.getFrog().moveRight();
+                // Draw frog at new position
+        }
+    }
 }
