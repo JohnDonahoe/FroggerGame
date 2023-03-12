@@ -12,6 +12,7 @@ import com.example.m1.R;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import java.util.concurrent.TimeUnit;
 
 public class GameScreen extends AppCompatActivity {
 
@@ -80,18 +81,42 @@ public class GameScreen extends AppCompatActivity {
         sprite.setImageDrawable(spriteDraw);
         
 
-
+        gameLoop();
         //GameHandler game_handler = new GameHandler(this.game);
 
         //View map = findViewById(R.id.map);
         //game_handler.draw_map(map);
     }
 
-    //private void builtBitmap() {
-        //bitmap = Bitmap.createBitmap(1080, 1080, Bitmap.Config.ARGB_8888);
-        //canvas = new Canvas(bitmap);
-       // gameViewing.setImageBitmap(bitmap);
-   // }
+    public void gameLoop() throws InterruptedException {
+        int timer = 0;
+        while (true) {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+                timer++;
+
+
+                // update f1 cars
+
+
+
+                if (timer % 2 == 0) {
+                    //update pink cars
+                }
+
+
+
+                if (timer % 3 == 0) {
+                    //update trucks
+                }
+
+
+            } catch (Exception e) {
+                continue;
+            }
+
+        }
+    }
 
     @Override
     public boolean onKeyDown(int KeyCode, KeyEvent event) {

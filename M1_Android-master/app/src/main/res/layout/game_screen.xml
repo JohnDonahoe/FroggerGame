@@ -272,11 +272,11 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road04" android:layout_weight="1"/>
+                    android:id="@+id/road04" android:layout_weight="1" tools:srcCompat="@drawable/bus1"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road14" android:layout_weight="1"/>
+                    android:id="@+id/road14" android:layout_weight="1" tools:srcCompat="@drawable/bus2"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -292,11 +292,11 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road54" android:layout_weight="1"/>
+                    android:id="@+id/road54" android:layout_weight="1" tools:srcCompat="@drawable/bus1"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/road64" android:layout_weight="1"/>
+                    android:id="@+id/road64" android:layout_weight="1" tools:srcCompat="@drawable/bus2"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
@@ -313,7 +313,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road13" android:layout_weight="1"/>
+                    android:id="@+id/road13" android:layout_weight="1" tools:srcCompat="@drawable/f1car"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -333,7 +333,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/road63" android:layout_weight="1"/>
+                    android:id="@+id/road63" android:layout_weight="1" tools:srcCompat="@drawable/f1car"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
@@ -350,7 +350,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road12" android:layout_weight="1"/>
+                    android:id="@+id/road12" android:layout_weight="1" tools:srcCompat="@drawable/pinkcar"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -366,7 +366,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road52" android:layout_weight="1"/>
+                    android:id="@+id/road52" android:layout_weight="1" tools:srcCompat="@drawable/pinkcar"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
@@ -387,7 +387,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road11" android:layout_weight="1"/>
+                    android:id="@+id/road11" android:layout_weight="1" tools:srcCompat="@drawable/pinkcar"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -395,7 +395,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road31" android:layout_weight="1"/>
+                    android:id="@+id/road31" android:layout_weight="1" tools:srcCompat="@drawable/pinkcar"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -411,7 +411,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="match_parent"
-                    android:id="@+id/road71" android:layout_weight="1"/>
+                    android:id="@+id/road71" android:layout_weight="1" tools:srcCompat="@drawable/pinkcar"/>
         </LinearLayout>
         <LinearLayout
                 android:orientation="horizontal"
@@ -420,7 +420,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road00" android:layout_weight="1"/>
+                    android:id="@+id/road00" android:layout_weight="1" tools:srcCompat="@drawable/f1car"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -436,7 +436,7 @@
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    android:id="@+id/road40" android:layout_weight="1"/>
+                    android:id="@+id/road40" android:layout_weight="1" tools:srcCompat="@drawable/f1car"/>
             <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
