@@ -36,7 +36,8 @@ public class Frog {
     }
 
     public int[] getPosition() {
-        return new int[this.position_x, this.position_y];
+        int[] temp = {position_x, position_y};
+        return temp;
     }
 
     public void setPosition(int[] position) {
@@ -48,27 +49,31 @@ public class Frog {
         if (!(position_x == 0)) {
             position_x -= 1;
         }
-        return new int[position_x, position_y];
+        int[] temp = {position_x, position_y};
+        return temp;
     }
 
     public int[] moveRight() {
         if (!(position_x == 13)) {
             position_x += 1;
         }
-        return new int[position_x, position_y];
+        int[] temp = {position_x, position_y};
+        return temp;
     }
 
     public int[] moveUp() {
         if (!(position_y == 0)) {
             position_y -= 1;
         }
-        return new int[position_x, position_y];
+        int[] temp = {position_x, position_y};
+        return temp;
     }
 
     public int[] moveDown() {
         if (!(position_y == 12)) {
             position_y += 1;
         }
-        return new int[position_x, position_y];
+        int[] temp = {position_x, position_y};
+        return temp;
     }
 }

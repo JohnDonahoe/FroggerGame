@@ -1,6 +1,9 @@
 package com.example.m1.Screens;
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.view.KeyEvent;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +30,9 @@ public class GameScreen extends AppCompatActivity {
 
     private ImageView gameViewing;
 
-    protected Game game = ConfigScreen.game;
+    private ImageView sprite;
+
+    protected Game game;
 
 
 
@@ -38,20 +43,38 @@ public class GameScreen extends AppCompatActivity {
     }
 
     private void initializeGame() {
-        lives = (TextView) findViewById(R.id.numLives);
-        name = (TextView) findViewById(R.id.textView5);
-        score = (TextView) findViewById(R.id.textView10);
+        game = ConfigScreen.get_game();
+        lives = (TextView) findViewById(R.id.lives_display);
+        name = (TextView) findViewById(R.id.name_display);
+        score = (TextView) findViewById(R.id.points_display);
         score.setText(Integer.toString(game.getScore()));
-        difficulty = (TextView) findViewById(R.id.textView8);
-        gameViewing = (ImageView) findViewById(R.id.gameImage);
+        difficulty = (TextView) findViewById(R.id.difficulty_display);
+        //gameViewing = (ImageView) findViewById(R.id.gameImage);
         difficulty.setText(game.getDifficulty());
         name.setText(game.getName());
         lives.setText(Integer.toString(game.getLives()));
 
-        GameHandler game_handler = new Game_Handler(game);
+        sprite = findViewById(R.id.player_sprite);
+        Drawable spriteDraw;
+        switch (game.getFrog().getColor()) {
+            case ("Red"):
+                spriteDraw = getDrawable(R.drawable.redfrogger);
+                break;
+            case ("Green"):
+                spriteDraw = getDrawable(R.drawable.pngwing_com);
+                break;
+            default:
+                spriteDraw = getDrawable(R.drawable.pngfind_com_frogger_png_5284221);
+                break;
+        }
+        sprite.setImageDrawable(spriteDraw);
+        
 
-        View map = findViewById(R.id.map);
-        v.draw(game.draw_map());
+
+        //GameHandler game_handler = new GameHandler(this.game);
+
+        //View map = findViewById(R.id.map);
+        //game_handler.draw_map(map);
     }
 
     //private void builtBitmap() {
@@ -62,19 +85,24 @@ public class GameScreen extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int KeyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_UP:
+        switch (KeyCode) {
+            case KeyEvent.KEYCODE_DPAD_UP:
                 game.getFrog().moveUp();
+                return true;
                 // Draw frog at new position
-            case KeyEvent.KEYCODE_DOWN:
+            case KeyEvent.KEYCODE_DPAD_DOWN:
                 game.getFrog().moveDown();
+                return true;
                 // Draw frog at new position
-            case KeyEvent.KEYCODE_LEFT:
+            case KeyEvent.KEYCODE_DPAD_LEFT:
                 game.getFrog().moveLeft();
+                return true;
                 // Draw frog at new position
-            case KeyEvent.KEYCODE_RIGHT:
+            case KeyEvent.KEYCODE_DPAD_RIGHT:
                 game.getFrog().moveRight();
+                return true;
                 // Draw frog at new position
         }
+        return false;
     }
 }

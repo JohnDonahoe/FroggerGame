@@ -96,4 +96,8 @@ public class ConfigScreen extends AppCompatActivity implements View.OnClickListe
         startActivity(intent);
         setContentView(R.layout.game_screen);
     }
+
+    public static Game get_game() {
+        return game;
+    }
 }
