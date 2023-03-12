@@ -34,11 +34,15 @@ public class GameScreen extends AppCompatActivity {
 
     Drawable spriteDraw;
 
+    private int maxHeight = 10;
+
     private int[] location = {10, 4};
 
     protected Game game;
 
     protected ImageView[][] imageDraws;
+
+    private int scoreNum = 0;
 
 
     protected void onCreate(Bundle init) {
@@ -100,6 +104,40 @@ public class GameScreen extends AppCompatActivity {
                 location[0]--;
                 sprite = imageDraws[location[0]][location[1]];
                 sprite.setImageDrawable(spriteDraw);
+                if (location[0] < maxHeight) {
+                    maxHeight = location[0];
+                    switch (maxHeight) {
+                        case 9:
+                        case 6:
+                            scoreNum += 10;
+                            break;
+                        case 8:
+                            scoreNum += 20;
+                            break;
+                        case 7:
+                            scoreNum += 30;
+                            break;
+                        case 5:
+                            scoreNum += 40;
+                            break;
+                        case 4:
+                            scoreNum += 10;
+                            break;
+                        case 3:
+                            scoreNum += 20;
+                            break;
+                        case 2:
+                            scoreNum += 40;
+                            break;
+                        case 1:
+                            scoreNum += 60;
+                            break;
+                        case 0:
+                            scoreNum += 70;
+                            break;
+                    }
+                    score.setText(Integer.toString(scoreNum));
+                }
                 return true;
                 // Draw frog at new position
             case KeyEvent.KEYCODE_DPAD_DOWN:
