@@ -32,8 +32,13 @@ public class GameScreen extends AppCompatActivity {
 
     private ImageView sprite;
 
+    Drawable spriteDraw;
+
+    private int[] location = {10, 4};
+
     protected Game game;
 
+    protected ImageView[][] imageDraws;
 
 
     protected void onCreate(Bundle init) {
@@ -43,6 +48,7 @@ public class GameScreen extends AppCompatActivity {
     }
 
     private void initializeGame() {
+        initImageDraws();
         game = ConfigScreen.get_game();
         lives = (TextView) findViewById(R.id.lives_display);
         name = (TextView) findViewById(R.id.name_display);
@@ -54,8 +60,8 @@ public class GameScreen extends AppCompatActivity {
         name.setText(game.getName());
         lives.setText(Integer.toString(game.getLives()));
 
-        sprite = findViewById(R.id.player_sprite);
-        Drawable spriteDraw;
+        sprite = imageDraws[10][4];
+
         switch (game.getFrog().getColor()) {
             case ("Red"):
                 spriteDraw = getDrawable(R.drawable.redfrogger);
@@ -87,22 +93,62 @@ public class GameScreen extends AppCompatActivity {
     public boolean onKeyDown(int KeyCode, KeyEvent event) {
         switch (KeyCode) {
             case KeyEvent.KEYCODE_DPAD_UP:
-                game.getFrog().moveUp();
+                if (location[0] == 0) {
+                    return false;
+                }
+                sprite.setImageDrawable(null);
+                location[0]--;
+                sprite = imageDraws[location[0]][location[1]];
+                sprite.setImageDrawable(spriteDraw);
                 return true;
                 // Draw frog at new position
             case KeyEvent.KEYCODE_DPAD_DOWN:
-                game.getFrog().moveDown();
+                if (location[0] == 10) {
+                    return false;
+                }
+                sprite.setImageDrawable(null);
+                location[0]++;
+                sprite = imageDraws[location[0]][location[1]];
+                sprite.setImageDrawable(spriteDraw);
                 return true;
                 // Draw frog at new position
             case KeyEvent.KEYCODE_DPAD_LEFT:
-                game.getFrog().moveLeft();
+                if (location[1] == 0) {
+                    return false;
+                }
+                sprite.setImageDrawable(null);
+                location[1]--;
+                sprite = imageDraws[location[0]][location[1]];
+                sprite.setImageDrawable(spriteDraw);
                 return true;
                 // Draw frog at new position
             case KeyEvent.KEYCODE_DPAD_RIGHT:
-                game.getFrog().moveRight();
+                if (location[1] == 7) {
+                    return false;
+                }
+                sprite.setImageDrawable(null);
+                location[1]++;
+                sprite = imageDraws[location[0]][location[1]];
+                sprite.setImageDrawable(spriteDraw);
                 return true;
                 // Draw frog at new position
         }
         return false;
+    }
+
+    public void initImageDraws() {
+        imageDraws = new ImageView[][]{
+                {findViewById(R.id.river03), findViewById(R.id.river13), findViewById(R.id.river23), findViewById(R.id.river33), findViewById(R.id.river43), findViewById(R.id.river53), findViewById(R.id.river63), findViewById(R.id.river73)},
+                {findViewById(R.id.river02), findViewById(R.id.river12), findViewById(R.id.river22), findViewById(R.id.river32), findViewById(R.id.river42), findViewById(R.id.river52), findViewById(R.id.river62), findViewById(R.id.river72)},
+                {findViewById(R.id.river01), findViewById(R.id.river11), findViewById(R.id.river21), findViewById(R.id.river31), findViewById(R.id.river41), findViewById(R.id.river51), findViewById(R.id.river61), findViewById(R.id.river71)},
+                {findViewById(R.id.river00), findViewById(R.id.river10), findViewById(R.id.river20), findViewById(R.id.river30), findViewById(R.id.river40), findViewById(R.id.river50), findViewById(R.id.river60), findViewById(R.id.river70)},
+                {findViewById(R.id.mid0), findViewById(R.id.mid1), findViewById(R.id.mid2), findViewById(R.id.mid3), findViewById(R.id.mid4), findViewById(R.id.mid5), findViewById(R.id.mid6), findViewById(R.id.mid7)},
+                {findViewById(R.id.road04), findViewById(R.id.road14), findViewById(R.id.road24), findViewById(R.id.road34), findViewById(R.id.road44), findViewById(R.id.road54), findViewById(R.id.road64), findViewById(R.id.road74)},
+                {findViewById(R.id.road03), findViewById(R.id.road13), findViewById(R.id.road23), findViewById(R.id.road33), findViewById(R.id.road43), findViewById(R.id.road53), findViewById(R.id.road63), findViewById(R.id.road73)},
+                {findViewById(R.id.road02), findViewById(R.id.road12), findViewById(R.id.road22), findViewById(R.id.road32), findViewById(R.id.road42), findViewById(R.id.road52), findViewById(R.id.road62), findViewById(R.id.road72)},
+                {findViewById(R.id.road01), findViewById(R.id.road11), findViewById(R.id.road21), findViewById(R.id.road31), findViewById(R.id.road41), findViewById(R.id.road51), findViewById(R.id.road61), findViewById(R.id.road71)},
+                {findViewById(R.id.road00), findViewById(R.id.road10), findViewById(R.id.road20), findViewById(R.id.road30), findViewById(R.id.road40), findViewById(R.id.road50), findViewById(R.id.road60), findViewById(R.id.road70)},
+                {findViewById(R.id.base0), findViewById(R.id.base1), findViewById(R.id.base2), findViewById(R.id.base3), findViewById(R.id.base4), findViewById(R.id.base5), findViewById(R.id.base6), findViewById(R.id.base7)}
+        };
     }
 }

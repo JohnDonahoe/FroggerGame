@@ -4,7 +4,7 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   tools:context=".Screens.GameScreen">
+                                                   tools:context=".Screens.GameScreen" android:id="@+id/idk">
 
 
     <TextView
@@ -15,7 +15,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.874"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"/>
 
     <TextView
             android:id="@+id/points_label"
@@ -33,7 +33,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/points_label"
             app:layout_constraintStart_toEndOf="@+id/points_label"
             app:layout_constraintTop_toTopOf="@+id/points_label"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.0"/>
 
     <TextView
             android:id="@+id/lives_display"
@@ -42,7 +42,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/lives_label"
             app:layout_constraintStart_toEndOf="@+id/lives_label"
             app:layout_constraintTop_toBottomOf="@+id/points_label"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="1.0"/>
 
     <TextView
             android:id="@+id/lives_label"
@@ -67,20 +67,147 @@
             app:layout_constraintBottom_toBottomOf="@+id/difficulty_label"
             app:layout_constraintStart_toEndOf="@+id/difficulty_label"
             app:layout_constraintTop_toBottomOf="@+id/lives_display"
-            app:layout_constraintVertical_bias="1.0" />
+            app:layout_constraintVertical_bias="1.0"/>
 
     <FrameLayout
             android:id="@+id/River"
-            android:layout_width="410dp"
+            android:layout_width="420dp"
             android:layout_height="200dp"
             android:background="#006699"
             app:layout_constraintBottom_toTopOf="@+id/Safe_Tile"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent">
-
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river00" android:translationY="150dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river70" android:translationY="150dp" android:translationX="350dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river60" android:translationY="150dp" android:translationX="300dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river50" android:translationY="150dp" android:translationX="250dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river40" android:translationY="150dp" android:translationX="200dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river30" android:translationY="150dp" android:translationX="150dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river10" android:translationY="150dp" android:translationX="50dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river20" android:translationY="150dp" android:translationX="100dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river01" android:translationY="100dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river71" android:translationY="100dp" android:translationX="350dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river61" android:translationY="100dp" android:translationX="300dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river51" android:translationY="100dp" android:translationX="250dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river41" android:translationY="100dp" android:translationX="200dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river31" android:translationY="100dp" android:translationX="150dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river11" android:translationY="100dp" android:translationX="50dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river21" android:translationY="100dp" android:translationX="100dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river72" android:translationY="50dp" android:translationX="350dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river62" android:translationY="50dp" android:translationX="300dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river02" android:translationY="50dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river52" android:translationY="50dp" android:translationX="250dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river42" android:translationY="50dp" android:translationX="200dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river32" android:translationY="50dp" android:translationX="150dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river22" android:translationY="50dp" android:translationX="100dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river23" android:translationX="100dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river13" android:translationX="50dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river03"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river33" tools:layout_editor_absoluteX="204dp"
+                tools:layout_editor_absoluteY="2dp" android:translationX="150dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river43" android:translationX="200dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river53" android:translationX="250dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river63" android:translationX="300dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river73" android:translationX="350dp"/>
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:id="@+id/river12" android:translationY="50dp" android:translationX="50dp"/>
     </FrameLayout>
-
     <FrameLayout
             android:id="@+id/Safe_Tile"
             android:layout_width="413dp"
@@ -90,7 +217,43 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent">
-
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid0" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid1" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid2" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid3" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid4" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid5" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid6" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/mid7" android:layout_weight="1"/>
+        </LinearLayout>
     </FrameLayout>
 
     <FrameLayout
@@ -108,35 +271,35 @@
                 android:layout_height="50dp">
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road04" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road14" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road24" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road34" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road44" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road54" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road64" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road74" android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
@@ -145,35 +308,35 @@
                 android:layout_height="50dp" android:translationY="50dp">
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road03" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road13" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road23" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road33" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road43" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road53" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road63" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road73" android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
@@ -182,35 +345,35 @@
                 android:layout_height="50dp" android:translationY="100dp">
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road02" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road12" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road22" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road32" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road42" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road52" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road62" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road72" android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
@@ -219,35 +382,35 @@
                 android:layout_height="50dp" android:translationY="150dp">
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road01" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road11" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road21" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road31" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road41" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road51" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road61" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road71" android:layout_weight="1"/>
         </LinearLayout>
         <LinearLayout
@@ -256,35 +419,35 @@
                 android:layout_height="50dp" android:translationY="200dp">
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road00" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road10" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road20" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road30" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road40" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="50dp" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="50dp"
                     android:id="@+id/road50" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road60" android:layout_weight="1"/>
             <ImageView
                     android:layout_width="50dp"
-                    android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                    android:layout_height="match_parent"
                     android:id="@+id/road70" android:layout_weight="1"/>
         </LinearLayout>
     </FrameLayout>
@@ -299,6 +462,43 @@
             app:layout_constraintHorizontal_bias="0.1"
             app:layout_constraintStart_toStartOf="parent">
 
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/base0" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/base1" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/base2" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/base3" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/base4" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/base5" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/base6" android:layout_weight="1"/>
+            <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/base7" android:layout_weight="1"/>
+        </LinearLayout>
     </FrameLayout>
 
     <FrameLayout
@@ -311,15 +511,6 @@
             app:layout_constraintStart_toStartOf="parent">
 
     </FrameLayout>
-
-    <ImageView
-            android:id="@+id/player_sprite"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="55dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
