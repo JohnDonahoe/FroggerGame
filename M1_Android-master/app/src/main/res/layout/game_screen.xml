@@ -28,12 +28,12 @@
 
     <TextView
             android:id="@+id/points_display"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="@+id/points_label"
             app:layout_constraintStart_toEndOf="@+id/points_label"
             app:layout_constraintTop_toTopOf="@+id/points_label"
-            app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintVertical_bias="000.0"/>
 
     <TextView
             android:id="@+id/lives_display"
@@ -73,7 +73,7 @@
             android:id="@+id/River"
             android:layout_width="420dp"
             android:layout_height="200dp"
-            android:background="#006699"
+            android:background="#00cafc"
             app:layout_constraintBottom_toTopOf="@+id/Safe_Tile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -505,7 +505,7 @@
             android:id="@+id/Goal"
             android:layout_width="409dp"
             android:layout_height="100dp"
-            android:background="#FFC560"
+            android:background="#FF60CB"
             app:layout_constraintBottom_toTopOf="@+id/River"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">

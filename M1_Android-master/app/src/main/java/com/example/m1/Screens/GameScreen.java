@@ -14,7 +14,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 
 public class GameScreen extends AppCompatActivity {
@@ -36,11 +38,11 @@ public class GameScreen extends AppCompatActivity {
 
     private ImageView sprite;
 
-    Drawable spriteDraw;
+    static Drawable spriteDraw;
 
     private int maxHeight = 10;
 
-    private int[] location = {10, 4};
+    private static int[] location = {10, 4};
 
     protected Game game;
 
@@ -90,14 +92,15 @@ public class GameScreen extends AppCompatActivity {
         sprite.setImageDrawable(spriteDraw);
 
 
-
+        roadUpdate();
 
 
         // need to add loop in here
         // call gameLoop()
-
-
-
+        final ScheduledExecutorService executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.scheduleAtFixedRate(GameScreen::gameLoop, 0, 2, TimeUnit.SECONDS);
+        executorService.scheduleAtFixedRate(GameScreen::gameLoop, 0, 2, TimeUnit.SECONDS);
+        executorService.scheduleAtFixedRate(GameScreen::gameLoop, 0, 2, TimeUnit.SECONDS);
     }
 
 
@@ -107,20 +110,20 @@ public class GameScreen extends AppCompatActivity {
 
 
         // update f1 cars
-        Car.updateF1Cars();
-        if (timer > 2) {
-            imageDraws[0][3].setImageDrawable(f1);
+        if (timer % 2 == 0) {
+            Car.updateF1Cars();
         }
 
 
 
-        if (timer % 2 == 0) {
+
+        if (timer % 5 == 0) {
             Car.updatePinkCars();
         }
 
 
 
-        if (timer % 3 == 0) {
+        if (timer % 7 == 0) {
             Car.updateTrucks();
         }
         roadUpdate();
@@ -231,40 +234,52 @@ public class GameScreen extends AppCompatActivity {
     static Drawable bus2;
     public static void roadUpdate() {
         // set all road values to null
-        for (int i = 5; i < 10; i++) {
-            for (int j = 0; j < 8; j++) {
-                imageDraws[i][j].setImageDrawable(null);
-            }
-        }
+        //for (int i = 5; i < 10; i++) {
+        //    for (int j = 0; j < 8; j++) {
+        //        imageDraws[i][j].setImageDrawable(null);
+        //    }
+        //}
 
 
 
+        imageDraws[location[0]][location[1]].setImageDrawable(spriteDraw);
 
+        imageDraws[Car.f1Car1[0]][Car.f1Car1[1] - 1 > -1 ? Car.f1Car1[1] - 1 : 7].setImageDrawable(null);
         imageDraws[Car.f1Car1[0]][Car.f1Car1[1]].setImageDrawable(f1);
 
-        imageDraws[Car.f1Car2[0]][Car.f1Car1[1]].setImageDrawable(f1);
+        imageDraws[Car.f1Car2[0]][Car.f1Car2[1] - 1 > -1 ? Car.f1Car2[1] - 1 : 7].setImageDrawable(null);
+        imageDraws[Car.f1Car2[0]][Car.f1Car2[1]].setImageDrawable(f1);
 
+        imageDraws[Car.f1Car3[0]][Car.f1Car3[1] - 1 > -1 ? Car.f1Car3[1] - 1 : 7].setImageDrawable(null);
         imageDraws[Car.f1Car3[0]][Car.f1Car3[1]].setImageDrawable(f1);
 
+        imageDraws[Car.f1Car4[0]][Car.f1Car4[1] - 1 > -1 ? Car.f1Car4[1] - 1 : 7].setImageDrawable(null);
         imageDraws[Car.f1Car4[0]][Car.f1Car4[1]].setImageDrawable(f1);
 
 
+        imageDraws[Car.pinkCar1[0]][Car.pinkCar1[1] + 1 < 8 ? Car.pinkCar1[1] + 1 : 0].setImageDrawable(null);
         imageDraws[Car.pinkCar1[0]][Car.pinkCar1[1]].setImageDrawable(pinkCar);
 
+        imageDraws[Car.pinkCar2[0]][Car.pinkCar2[1] + 1 < 8 ? Car.pinkCar2[1] + 1 : 0].setImageDrawable(null);
         imageDraws[Car.pinkCar2[0]][Car.pinkCar2[1]].setImageDrawable(pinkCar);
 
+        imageDraws[Car.pinkCar3[0]][Car.pinkCar3[1] + 1 < 8 ? Car.pinkCar3[1] + 1 : 0].setImageDrawable(null);
         imageDraws[Car.pinkCar3[0]][Car.pinkCar3[1]].setImageDrawable(pinkCar);
 
+        imageDraws[Car.pinkCar4[0]][Car.pinkCar4[1] + 1 < 8 ? Car.pinkCar4[1] + 1 : 0].setImageDrawable(null);
         imageDraws[Car.pinkCar4[0]][Car.pinkCar4[1]].setImageDrawable(pinkCar);
 
+        imageDraws[Car.pinkCar5[0]][Car.pinkCar5[1] + 1 < 8 ? Car.pinkCar5[1] + 1 : 0].setImageDrawable(null);
         imageDraws[Car.pinkCar5[0]][Car.pinkCar5[1]].setImageDrawable(pinkCar);
 
 
         imageDraws[Car.truck1[0][0]][Car.truck1[0][1]].setImageDrawable(bus1);
         imageDraws[Car.truck1[1][0]][Car.truck1[1][1]].setImageDrawable(bus2);
+        imageDraws[Car.truck1[1][0]][Car.truck1[1][1] + 1 < 8 ? Car.truck1[1][1] + 1 : 0].setImageDrawable(null);
 
         imageDraws[Car.truck2[0][0]][Car.truck2[0][1]].setImageDrawable(bus1);
         imageDraws[Car.truck2[1][0]][Car.truck2[1][1]].setImageDrawable(bus2);
+        imageDraws[Car.truck2[1][0]][Car.truck2[1][1] + 1 < 8 ? Car.truck2[1][1] + 1 : 0].setImageDrawable(null);
         // then set locations in Car.java to respective cars
     }
 }
