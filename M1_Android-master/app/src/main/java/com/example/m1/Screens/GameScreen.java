@@ -2,6 +2,7 @@ package com.example.m1.Screens;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,7 +13,9 @@ import com.example.m1.R;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import java.util.concurrent.TimeUnit;
+
+import java.util.concurrent.ScheduledExecutorService;
+
 
 public class GameScreen extends AppCompatActivity {
 
@@ -41,7 +44,7 @@ public class GameScreen extends AppCompatActivity {
 
     protected Game game;
 
-    protected ImageView[][] imageDraws;
+    public static ImageView[][] imageDraws;
 
     private int scoreNum = 0;
 
@@ -52,7 +55,7 @@ public class GameScreen extends AppCompatActivity {
         initializeGame();
     }
 
-    private void initializeGame() {
+    private void initializeGame(){
         initImageDraws();
         game = ConfigScreen.get_game();
         lives = (TextView) findViewById(R.id.lives_display);
@@ -64,6 +67,12 @@ public class GameScreen extends AppCompatActivity {
         difficulty.setText(game.getDifficulty());
         name.setText(game.getName());
         lives.setText(Integer.toString(game.getLives()));
+
+        f1 = getDrawable(R.drawable.f1car);
+        pinkCar = getDrawable(R.drawable.pinkcar);
+        bus1 = getDrawable(R.drawable.bus1);
+        bus2 = getDrawable(R.drawable.bus2);
+
 
         sprite = imageDraws[10][4];
 
@@ -79,43 +88,42 @@ public class GameScreen extends AppCompatActivity {
                 break;
         }
         sprite.setImageDrawable(spriteDraw);
-        
 
-        gameLoop();
-        //GameHandler game_handler = new GameHandler(this.game);
 
-        //View map = findViewById(R.id.map);
-        //game_handler.draw_map(map);
+
+
+
+        // need to add loop in here
+        // call gameLoop()
+
+
+
     }
 
-    public void gameLoop() throws InterruptedException {
-        int timer = 0;
-        while (true) {
-            try {
-                TimeUnit.SECONDS.sleep(1);
-                timer++;
+
+    static int timer = 0;
+    public static void gameLoop(){
+        timer++;
 
 
-                // update f1 cars
-
-
-
-                if (timer % 2 == 0) {
-                    //update pink cars
-                }
-
-
-
-                if (timer % 3 == 0) {
-                    //update trucks
-                }
-
-
-            } catch (Exception e) {
-                continue;
-            }
-
+        // update f1 cars
+        Car.updateF1Cars();
+        if (timer > 2) {
+            imageDraws[0][3].setImageDrawable(f1);
         }
+
+
+
+        if (timer % 2 == 0) {
+            Car.updatePinkCars();
+        }
+
+
+
+        if (timer % 3 == 0) {
+            Car.updateTrucks();
+        }
+        roadUpdate();
     }
 
     @Override
@@ -213,5 +221,50 @@ public class GameScreen extends AppCompatActivity {
                 {findViewById(R.id.road00), findViewById(R.id.road10), findViewById(R.id.road20), findViewById(R.id.road30), findViewById(R.id.road40), findViewById(R.id.road50), findViewById(R.id.road60), findViewById(R.id.road70)},
                 {findViewById(R.id.base0), findViewById(R.id.base1), findViewById(R.id.base2), findViewById(R.id.base3), findViewById(R.id.base4), findViewById(R.id.base5), findViewById(R.id.base6), findViewById(R.id.base7)}
         };
+    }
+
+    static Drawable f1;
+    static Drawable pinkCar;
+
+    static Drawable bus1;
+
+    static Drawable bus2;
+    public static void roadUpdate() {
+        // set all road values to null
+        for (int i = 5; i < 10; i++) {
+            for (int j = 0; j < 8; j++) {
+                imageDraws[i][j].setImageDrawable(null);
+            }
+        }
+
+
+
+
+        imageDraws[Car.f1Car1[0]][Car.f1Car1[1]].setImageDrawable(f1);
+
+        imageDraws[Car.f1Car2[0]][Car.f1Car1[1]].setImageDrawable(f1);
+
+        imageDraws[Car.f1Car3[0]][Car.f1Car3[1]].setImageDrawable(f1);
+
+        imageDraws[Car.f1Car4[0]][Car.f1Car4[1]].setImageDrawable(f1);
+
+
+        imageDraws[Car.pinkCar1[0]][Car.pinkCar1[1]].setImageDrawable(pinkCar);
+
+        imageDraws[Car.pinkCar2[0]][Car.pinkCar2[1]].setImageDrawable(pinkCar);
+
+        imageDraws[Car.pinkCar3[0]][Car.pinkCar3[1]].setImageDrawable(pinkCar);
+
+        imageDraws[Car.pinkCar4[0]][Car.pinkCar4[1]].setImageDrawable(pinkCar);
+
+        imageDraws[Car.pinkCar5[0]][Car.pinkCar5[1]].setImageDrawable(pinkCar);
+
+
+        imageDraws[Car.truck1[0][0]][Car.truck1[0][1]].setImageDrawable(bus1);
+        imageDraws[Car.truck1[1][0]][Car.truck1[1][1]].setImageDrawable(bus2);
+
+        imageDraws[Car.truck2[0][0]][Car.truck2[0][1]].setImageDrawable(bus1);
+        imageDraws[Car.truck2[1][0]][Car.truck2[1][1]].setImageDrawable(bus2);
+        // then set locations in Car.java to respective cars
     }
 }
