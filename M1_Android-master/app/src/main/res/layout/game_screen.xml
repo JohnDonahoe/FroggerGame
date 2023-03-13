@@ -15,16 +15,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.874"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" android:scaleX="1.5" android:scaleY="1.5"/>
 
     <TextView
             android:id="@+id/points_label"
-            android:layout_width="64dp"
-            android:layout_height="21dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="1.5dp"
+            android:layout_width="66dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="8dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:text="Points:"/>
+            app:layout_constraintTop_toTopOf="parent" android:text="Points:" android:scaleX="1.5" android:scaleY="1.5"/>
 
     <TextView
             android:id="@+id/points_display"
@@ -33,7 +33,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/points_label"
             app:layout_constraintStart_toEndOf="@+id/points_label"
             app:layout_constraintTop_toTopOf="@+id/points_label"
-            app:layout_constraintVertical_bias="000.0"/>
+            app:layout_constraintVertical_bias="0.0" android:scaleX="1.5" android:scaleY="1.5"
+            android:layout_marginStart="8dp"/>
 
     <TextView
             android:id="@+id/lives_display"
@@ -42,23 +43,23 @@
             app:layout_constraintBottom_toBottomOf="@+id/lives_label"
             app:layout_constraintStart_toEndOf="@+id/lives_label"
             app:layout_constraintTop_toBottomOf="@+id/points_label"
-            app:layout_constraintVertical_bias="1.0"/>
-
+            app:layout_constraintVertical_bias="1.0" android:scaleX="1.5" android:scaleY="1.5"/>
     <TextView
             android:id="@+id/lives_label"
             android:layout_width="64dp"
             android:layout_height="22dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="28dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/points_label" android:text="Lives:"/>
-
+            app:layout_constraintTop_toBottomOf="@+id/points_label" android:text="Lives:"
+            android:layout_marginTop="4dp" android:scaleX="1.5" android:scaleY="1.5"/>
     <TextView
             android:id="@+id/difficulty_label"
-            android:layout_width="63dp"
-            android:layout_height="20dp"
-            android:layout_marginStart="16dp"
+            android:layout_width="66dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="28dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/lives_label" android:text="Difficulty:"/>
+            app:layout_constraintTop_toBottomOf="@+id/lives_label" android:text="Difficulty:"
+            android:layout_marginTop="4dp" android:scaleX="1.5" android:scaleY="1.5"/>
 
     <TextView
             android:id="@+id/difficulty_display"
@@ -67,8 +68,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/difficulty_label"
             app:layout_constraintStart_toEndOf="@+id/difficulty_label"
             app:layout_constraintTop_toBottomOf="@+id/lives_display"
-            app:layout_constraintVertical_bias="1.0"/>
-
+            app:layout_constraintVertical_bias="0.0" android:scaleX="1.5" android:scaleY="1.5"
+            android:layout_marginStart="8dp" android:translationY="5dp" android:translationX="2dp"/>
     <FrameLayout
             android:id="@+id/River"
             android:layout_width="420dp"
