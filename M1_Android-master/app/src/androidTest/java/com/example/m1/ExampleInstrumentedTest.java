@@ -25,9 +25,24 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
+    public void testNameParameters() {
+        Game game = new Game();
+        assertFalse(game.setName(null));
+        assertFalse(game.setName("     "));
+        assertTrue(game.setName("Max"));
+    }
+
+    @Test
     public void testDifficulty() {
         Game game = new Game();
+        assertFalse(game.setDifficulty("Very Hard"));
         game.setDifficulty("Easy");
-        assertEquals()
+        assertEquals(3, game.getLives());
+        game.setDifficulty("Medium");
+        assertEquals(2, game.getLives());
+        game.setDifficulty("Hard");
+        assertEquals(1, game.getLives());
     }
+
+
 }
