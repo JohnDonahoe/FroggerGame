@@ -244,7 +244,7 @@ public class GameScreen extends AppCompatActivity {
 
 
 
-        imageDraws[location[0]][location[1]].setImageDrawable(spriteDraw);
+
 
         imageDraws[Car.f1Car1[0]][Car.f1Car1[1] - 1 > -1 ? Car.f1Car1[1] - 1 : 7].setImageDrawable(null);
         imageDraws[Car.f1Car1[0]][Car.f1Car1[1]].setImageDrawable(f1);
@@ -282,6 +282,8 @@ public class GameScreen extends AppCompatActivity {
         imageDraws[Car.truck2[0][0]][Car.truck2[0][1]].setImageDrawable(bus1);
         imageDraws[Car.truck2[1][0]][Car.truck2[1][1]].setImageDrawable(bus2);
         imageDraws[Car.truck2[1][0]][Car.truck2[1][1] + 1 < 8 ? Car.truck2[1][1] + 1 : 0].setImageDrawable(null);
+
+        imageDraws[location[0]][location[1]].setImageDrawable(spriteDraw);
         // then set locations in Car.java to respective cars
     }
 }
