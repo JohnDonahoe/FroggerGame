@@ -144,17 +144,19 @@ public class GameScreen extends AppCompatActivity {
                     maxHeight = location[0];
                     switch (maxHeight) {
                         case 9:
-                        case 6:
-                            scoreNum += 10;
+                            scoreNum += 30;
                             break;
                         case 8:
-                            scoreNum += 20;
+                            scoreNum += 10;
                             break;
                         case 7:
+                            scoreNum += 10;
+                            break;
+                        case 6:
                             scoreNum += 30;
                             break;
                         case 5:
-                            scoreNum += 40;
+                            scoreNum += 20;
                             break;
                         case 4:
                             scoreNum += 10;
