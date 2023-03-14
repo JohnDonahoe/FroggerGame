@@ -44,5 +44,34 @@ public class ExampleInstrumentedTest {
         assertEquals(1, game.getLives());
     }
 
+    @Test
+    public void testMovement() {
+        Frog frog = new Frog("Red", 1, 1, 1, 1); //x = 6, y = 12
+        frog.moveLeft();
+        frog.moveUp();
+        frog.move();    // x = 5, y = 10
+        int[] temp = {5, 10};
+        assertEquals(frog.getPosition(), temp);
 
+        frog.moveRight();
+        frog.moveRight();
+        frog.moveRight();
+        frog.moveDown();
+        temp = {8, 11};
+        assertEquals(frog.getPosition(), temp);
+    }
+
+    @Test
+    public void testMovementOffScreen() {
+        Frog frog = new Frog("Red", 1, 1, 1, 1);
+        int[] pos = {0, 12};
+        frog.setPosition(pos);
+        frog.moveLeft();
+        frog.moveDown();
+        assertEquals(frog.getPosition(), pos);
+        pos = {13, 0};
+        frog.moveRight();
+        frog.moveDown();
+        assertEquals(frog.getPosition(), pos);
+    }
 }
