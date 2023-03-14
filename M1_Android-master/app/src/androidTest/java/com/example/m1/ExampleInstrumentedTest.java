@@ -1,6 +1,7 @@
 package com.example.m1;
 
 import android.content.Context;
+import android.app.Instrumentation
 
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
@@ -73,5 +74,31 @@ public class ExampleInstrumentedTest {
         frog.moveRight();
         frog.moveDown();
         assertEquals(frog.getPosition(), pos);
+    }
+
+    @Test
+    public void testScore() {
+        Game game = new Game();
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_UP);
+        assertEquals(30, game.getScore())
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_UP);
+        assertEquals(40, game.getScore());
+
+
+    }
+
+    @Test
+    public void testNoScoreIncrease() {
+        Game game = new Game();
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_RIGHT);
+        assertEquals(0, game.getScore());
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_LEFT);
+        assertEquals(0, game.getScore());
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_DOWN);
+        assertEquals(o, game.getScore());
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_UP);
+        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_RIGHT);
+        assertEquals(30, game.getScore())
+
     }
 }
