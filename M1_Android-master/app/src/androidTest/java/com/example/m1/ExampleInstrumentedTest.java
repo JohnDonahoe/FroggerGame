@@ -189,21 +189,23 @@ public class ExampleInstrumentedTest {
         assertEquals(frog.getPosition()[1], position[1]);
     }
 
-    @Test
-    public void testScoreDiffIncreases() {
-        Game game = new Game();
-        int score0 = game.getScore();
-        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
-        int score1 = game.getScore();
-        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 9);
-        int score2 = game.getScore();
-        assertFalse((score1 - score0) == (score2 - score1));
 
-        score0 = game.getScore();
+
+    @Test
+    public void testScoreIncreasing() {
+        Game game = new Game();
+        int score1 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
+        int score2 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 9);
+        int score3 = game.getScore();
+        assertFalse((score2 - score1) == (score3 - score2));
+
+        score1 = game.getScore();
         game.score(KeyEvent.KEYCODE_DPAD_UP, 4, 5);
         score1 = game.getScore();
         game.score(KeyEvent.KEYCODE_DPAD_UP, 3, 4);
         score2 = game.getScore();
-        assertFalse((score1 - score0) == (score2 - score1));
+        assertFalse((score2 - score1) == (score3 - score2));
     }
 }
