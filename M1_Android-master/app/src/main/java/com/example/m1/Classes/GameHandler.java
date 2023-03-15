@@ -1,9 +1,7 @@
 package com.example.m1.Classes;
 
-import android.content.Context;
 import android.graphics.*;
 import android.view.View;
-import android.widget.ImageView;
 
 public class GameHandler {
 
@@ -38,7 +36,7 @@ public class GameHandler {
         this.game = game;
     }
 
-    public void draw_map(View map) {
+    public void drawMap(View map) {
         canvas = new Canvas();
         paint = new Paint();
         for (int i = 0; i < FROGGER_MAP.length; i++) {

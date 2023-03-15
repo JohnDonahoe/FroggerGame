@@ -1,36 +1,88 @@
 package com.example.m1.Classes;
 
-import android.graphics.drawable.Drawable;
-
 public class Car {
 
-    public static int[] f1Car1 = {9, 0};
+    private static int[] f1Car1 = {9, 0};
 
-    public static int[] f1Car2 = {9, 4};
+    private static int[] f1Car2 = {9, 4};
 
-    public static int[] f1Car3 = {6, 1};
+    private static int[] f1Car3 = {6, 1};
 
-    public static int[] f1Car4 = {6, 6};
+    private static int[] f1Car4 = {6, 6};
 
-    public static int[] pinkCar1 = {8, 1};
+    private static int[] pinkCar1 = {8, 1};
 
-    public static int[] pinkCar2 = {8, 3};
+    private static int[] pinkCar2 = {8, 3};
 
-    public static int[] pinkCar3 = {8, 7};
+    private static int[] pinkCar3 = {8, 7};
 
-    public static int[] pinkCar4 = {7, 1};
+    private static int[] pinkCar4 = {7, 1};
 
-    public static int[] pinkCar5 = {7, 5};
+    private static int[] pinkCar5 = {7, 5};
 
-    public static int[][] truck1 = {{5, 0}, {5, 1}};
+    private static int[][] truck1 = {{5, 0}, {5, 1}};
 
-    public static int[][] truck2 = {{5, 5}, {5, 6}};
+    private static int[][] truck2 = {{5, 5}, {5, 6}};
 
-    public static int f1CarSpeed = 2;
-    public static int pinkCarSpeed = 5;
-    public static int truckSpeed = 7;
+    private static int f1CarSpeed = 2;
+    private static int pinkCarSpeed = 5;
+    private static int truckSpeed = 7;
 
+    public int[] getF1Car1() {
+        return f1Car1;
+    }
 
+    public int[] getF1Car2() {
+        return f2Car2;
+    }
+
+    public int[] getF1Car3() {
+        return f1Car3;
+    }
+
+    public int[] getF1Car4() {
+        return f1Car4;
+    }
+
+    public int[] getPinkCar1() {
+        return pinkCar1;
+    }
+
+    public int[] getPinkCar2() {
+        return pinkCar2;
+    }
+
+    public int[] getPinkCar3() {
+        return pinkCar3;
+    }
+
+    public int[] getPinkCar4() {
+        return pinkCar4;
+    }
+
+    public int[] getPinkCar5() {
+        return pinkCar5;
+    }
+
+    public int[] getTruck1() {
+        return truck1;
+    }
+
+    public int[] getTruck2() {
+        return truck2;
+    }
+
+    public int getF1CarSpeed() {
+        return f1CarSpeed;
+    }
+
+    public int getPinkCarSpeed() {
+        return pinkCarSpeed;
+    }
+
+    public int getTruckSpeed() {
+        return truckSpeed;
+    }
     public static void updateTrucks() {
         truck1[0][1] = (truck1[0][1] - 1) % 8;
         truck1[1][1] = (truck1[1][1] - 1) % 8;
