@@ -1,5 +1,7 @@
 package com.example.m1.Classes;
 
+import android.view.KeyEvent;
+
 public class Game {
     private String name;
     private String difficulty;
@@ -80,5 +82,44 @@ public class Game {
     //  Parameters: Frog frog (to be set to)
     public void setFrog(Frog frog) {
         this.frog = frog;
+    }
+
+    public int score(int event, int location_y, int maxHeight) {
+        if (event == KeyEvent.KEYCODE_DPAD_UP && location_y < maxHeight) {
+            maxHeight = location_y;
+            switch (maxHeight) {
+                case 9:
+                    score += 30;
+                    break;
+                case 8:
+                    score += 10;
+                    break;
+                case 7:
+                    score += 10;
+                    break;
+                case 6:
+                    score += 30;
+                    break;
+                case 5:
+                    score += 20;
+                    break;
+                case 4:
+                    score += 10;
+                    break;
+                case 3:
+                    score += 20;
+                    break;
+                case 2:
+                    score += 40;
+                    break;
+                case 1:
+                    score += 60;
+                    break;
+                case 0:
+                    score += 70;
+                    break;
+            }
+        }
+        return maxHeight;
     }
 }

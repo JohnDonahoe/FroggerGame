@@ -3,6 +3,7 @@ package com.example.m1;
 import android.content.Context;
 import android.app.Instrumentation;
 
+import android.view.KeyEvent;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
@@ -83,34 +84,35 @@ public class ExampleInstrumentedTest {
         assertEquals(frog.getPosition()[0], pos[0]);
         assertEquals(frog.getPosition()[1], pos[1]);
     }
-/*
+
     @Test
     public void testScore() {
         Game game = new Game();
-        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_UP);
-        assertEquals(30, game.getScore());
-        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_UP);
-        assertEquals(40, game.getScore());
-
-
+        int prev_score = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
+        assertTrue(game.getScore() > prev_score);
+        prev_score = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 9);
+        assertTrue(game.getScore() > prev_score);
     }
 
     @Test
     public void testNoScoreIncrease() {
         Game game = new Game();
-        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_RIGHT);
-        assertEquals(0, game.getScore());
-        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_LEFT);
-        assertEquals(0, game.getScore());
-        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_DOWN);
-        assertEquals(o, game.getScore());
-        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_UP);
-        getInstrumentation().sendKeyDownUpSync(KeyEvent.KEYCODE_DPAD_RIGHT);
-        assertEquals(30, game.getScore());
+        int prev_score = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_RIGHT, 9, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_DOWN, 9, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_LEFT, 9, 10);
+        assertTrue(game.getScore() == prev_score);
 
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 9);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 7, 8);
+        prev_score = game.getScore();
+        //move down twice
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 8);
+        assertTrue(game.getScore() == prev_score);
     }
-
- */
 
     @Test
     public void testF1CarMoveProperly() {
