@@ -208,4 +208,22 @@ public class ExampleInstrumentedTest {
         score2 = game.getScore();
         assertFalse((score2 - score1) == (score3 - score2));
     }
+
+    @Test
+    public void testTheNoScoreIncrease() {
+        Game game = new Game();
+        int score1 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
+        int score2 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 8);
+        int score3 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 7);
+
+        // check that it increases at first
+        assertFalse(score1 == score2);
+
+        assertTrue(score2 == score3);
+
+        assertTrue(score2 == score3);
+    }
 }
