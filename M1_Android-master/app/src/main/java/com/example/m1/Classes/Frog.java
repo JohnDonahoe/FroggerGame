@@ -29,7 +29,7 @@ public class Frog {
     }
 
     public String getImageName() {
-        return this.image_name;
+        return this.imageName;
     }
 
     public Rect getRectangle() {
@@ -71,7 +71,7 @@ public class Frog {
     }
 
     public int[] moveDown() {
-        if (!(positionX == 12)) {
+        if (!(positionY == 12)) {
             positionY += 1;
         }
         int[] temp = {positionX, positionY};
@@ -88,6 +88,6 @@ public class Frog {
         } else if (event == KeyEvent.KEYCODE_DPAD_LEFT) {
             return moveLeft();
         }
-        return new int[]{position_x, position_y};
+        return new int[]{positionX, positionY};
     }
 }

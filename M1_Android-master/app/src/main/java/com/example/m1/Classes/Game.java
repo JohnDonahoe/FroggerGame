@@ -88,36 +88,38 @@ public class Game {
         if (event == KeyEvent.KEYCODE_DPAD_UP && locationY < maxHeight) {
             maxHeight = locationY;
             switch (maxHeight) {
-                case 9:
-                    score += 30;
-                    break;
-                case 8:
-                    score += 10;
-                    break;
-                case 7:
-                    score += 10;
-                    break;
-                case 6:
-                    score += 30;
-                    break;
-                case 5:
-                    score += 20;
-                    break;
-                case 4:
-                    score += 10;
-                    break;
-                case 3:
-                    score += 20;
-                    break;
-                case 2:
-                    score += 40;
-                    break;
-                case 1:
-                    score += 60;
-                    break;
-                case 0:
-                    score += 70;
-                    break;
+            case 9:
+                score += 30;
+                break;
+            case 8:
+                score += 10;
+                break;
+            case 7:
+                score += 10;
+                break;
+            case 6:
+                score += 30;
+                break;
+            case 5:
+                score += 20;
+                break;
+            case 4:
+                score += 10;
+                break;
+            case 3:
+                score += 20;
+                break;
+            case 2:
+                score += 40;
+                break;
+            case 1:
+                score += 60;
+                break;
+            case 0:
+                score += 70;
+                break;
+            default:
+                break;
             }
         }
         return maxHeight;

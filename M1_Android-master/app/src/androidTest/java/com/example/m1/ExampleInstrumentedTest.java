@@ -134,15 +134,15 @@ public class ExampleInstrumentedTest {
         car.updateTrucks();
         //should move both of their halves to the left by one
         //and wrap around screen when on left edge
-        assertEquals(car.truck1[0][0], 5);
-        assertEquals(car.truck1[0][1], 7);
-        assertEquals(car.truck1[1][0], 5);
-        assertEquals(car.truck1[1][1], 0);
+        assertEquals(car.getTruck1()[0][0], 5);
+        assertEquals(car.getTruck1()[0][1], 7);
+        assertEquals(car.getTruck1()[1][0], 5);
+        assertEquals(car.getTruck1()[1][1], 0);
 
-        assertEquals(car.truck2[0][0], 5);
-        assertEquals(car.truck2[0][1], 4);
-        assertEquals(car.truck2[1][0], 5);
-        assertEquals(car.truck2[1][1], 5);
+        assertEquals(car.getTruck2()[0][0], 5);
+        assertEquals(car.getTruck2()[0][1], 4);
+        assertEquals(car.getTruck2()[1][0], 5);
+        assertEquals(car.getTruck2()[1][1], 5);
     }
 
     @Test

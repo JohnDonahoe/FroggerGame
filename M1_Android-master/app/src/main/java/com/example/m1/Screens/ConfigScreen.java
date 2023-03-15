@@ -64,38 +64,40 @@ public class ConfigScreen extends AppCompatActivity implements View.OnClickListe
 
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.button3:              //Name Button
-                nameSet = game.setName(enterNameBox.getText().toString());
-                if (!nameSet) {
-                    error.setText("Please set a name");
-                }
-                break;
-            case R.id.radioButton3:         //Easy Button
-                difficultySet = game.setDifficulty("Easy");
-                break;
-            case R.id.radioButton4:         //Medium Button
-                difficultySet = game.setDifficulty("Medium");
-                break;
-            case R.id.radioButton5:         //Hard Button
-                difficultySet = game.setDifficulty("Hard");
-                break;
-            case R.id.radioButton12:        //Red Frog Button
-                game.setFrog(new Frog("Red", 0, 0, 0, 0));
-                frogSet = true;
-                break;
-            case R.id.radioButton13:        //Blue Frog Button
-                game.setFrog(new Frog("Blue", 0, 0, 0, 0));
-                frogSet = true;
-                break;
-            case R.id.radioButton14:        //Green Frog Button
-                game.setFrog(new Frog("Green", 0, 0, 0, 0));
-                frogSet = true;
-                break;
-            case R.id.button2:         //Start Button
-                if (nameSet && frogSet && difficultySet) {
-                    openGameScreen();
-                }
-                break;
+        case R.id.button3:              //Name Button
+            nameSet = game.setName(enterNameBox.getText().toString());
+            if (!nameSet) {
+                error.setText("Please set a name");
+            }
+            break;
+        case R.id.radioButton3:         //Easy Button
+            difficultySet = game.setDifficulty("Easy");
+            break;
+        case R.id.radioButton4:         //Medium Button
+            difficultySet = game.setDifficulty("Medium");
+            break;
+        case R.id.radioButton5:         //Hard Button
+            difficultySet = game.setDifficulty("Hard");
+            break;
+        case R.id.radioButton12:        //Red Frog Button
+            game.setFrog(new Frog("Red", 0, 0, 0, 0));
+            frogSet = true;
+            break;
+        case R.id.radioButton13:        //Blue Frog Button
+            game.setFrog(new Frog("Blue", 0, 0, 0, 0));
+            frogSet = true;
+            break;
+        case R.id.radioButton14:        //Green Frog Button
+            game.setFrog(new Frog("Green", 0, 0, 0, 0));
+            frogSet = true;
+            break;
+        case R.id.button2:         //Start Button
+            if (nameSet && frogSet && difficultySet) {
+                openGameScreen();
+            }
+            break;
+        default:
+            break;
         }
     }
 

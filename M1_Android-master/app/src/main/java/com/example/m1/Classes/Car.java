@@ -28,47 +28,47 @@ public class Car {
     private static int pinkCarSpeed = 5;
     private static int truckSpeed = 7;
 
-    public int[] getF1Car1() {
+    public static int[] getF1Car1() {
         return f1Car1;
     }
 
-    public int[] getF1Car2() {
-        return f2Car2;
+    public static int[] getF1Car2() {
+        return f1Car2;
     }
 
-    public int[] getF1Car3() {
+    public static int[] getF1Car3() {
         return f1Car3;
     }
 
-    public int[] getF1Car4() {
+    public static int[] getF1Car4() {
         return f1Car4;
     }
 
-    public int[] getPinkCar1() {
+    public static int[] getPinkCar1() {
         return pinkCar1;
     }
 
-    public int[] getPinkCar2() {
+    public static int[] getPinkCar2() {
         return pinkCar2;
     }
 
-    public int[] getPinkCar3() {
+    public static int[] getPinkCar3() {
         return pinkCar3;
     }
 
-    public int[] getPinkCar4() {
+    public static int[] getPinkCar4() {
         return pinkCar4;
     }
 
-    public int[] getPinkCar5() {
+    public static int[] getPinkCar5() {
         return pinkCar5;
     }
 
-    public int[] getTruck1() {
+    public static int[][] getTruck1() {
         return truck1;
     }
 
-    public int[] getTruck2() {
+    public static int[][] getTruck2() {
         return truck2;
     }
 
