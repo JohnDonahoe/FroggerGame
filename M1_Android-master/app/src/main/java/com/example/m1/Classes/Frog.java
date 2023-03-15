@@ -88,5 +88,6 @@ public class Frog {
         } else if (event == KeyEvent.KEYCODE_DPAD_LEFT) {
             return moveLeft();
         }
+        return new int[]{position_x, position_y};
     }
 }

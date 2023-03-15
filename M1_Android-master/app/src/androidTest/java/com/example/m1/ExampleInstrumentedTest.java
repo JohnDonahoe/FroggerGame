@@ -182,7 +182,7 @@ public class ExampleInstrumentedTest {
         assertEquals(frog.getPosition()[1], position[1]);
 
         frog.move(KeyEvent.KEYCODE_DPAD_LEFT);
-        frog.move(KeyEvent.KEYCODE_DPAD_Down);
+        frog.move(KeyEvent.KEYCODE_DPAD_DOWN);
         position = new int[]{5, 5};
 
         assertEquals(frog.getPosition()[0], position[0]);
