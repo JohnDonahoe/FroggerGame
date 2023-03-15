@@ -86,7 +86,7 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void testScore() {
+    public void testScoreIncreases() {
         Game game = new Game();
         int prev_score = game.getScore();
         game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
@@ -143,5 +143,67 @@ public class ExampleInstrumentedTest {
         assertEquals(car.truck2[0][1], 4);
         assertEquals(car.truck2[1][0], 5);
         assertEquals(car.truck2[1][1], 5);
+    }
+
+    @Test
+    public void testDiffCarSpeed() {
+        Car car = new Car();
+        assertFalse(car.f1CarSpeed == car.pinkCarSpeed);
+        assertFalse(car.f1CarSpeed == car.truckSpeed);
+        assertFalse(car.truckSpeed == car.pinkCarSpeed);
+    }
+
+    @Test
+    public void testDiffCarDirections() {
+        Car car = new Car();
+        int f1CarStartPosition = car.f1Car1[1];
+        int pinkCarStartPosition = car.pinkCar1[1];
+
+        car.updateF1Cars();
+        car.updatePinkCars();
+
+        int f1CarFinalPosition = car.f1Car1[1];
+        int pinkCarFinalPosition = car.pinkCar1[1];
+
+        int f1Change = f1CarFinalPosition - f1CarStartPosition;
+        int pinkChange = pinkCarFinalPosition - pinkCarStartPosition;
+        assertFalse(f1Change == pinkChange);
+    }
+
+    @Test
+    public void testKeyInput() {
+        Frog frog = new Frog("Red", 1, 1, 1, 1);
+        int[] position = {5, 5};
+        frog.setPosition(position);
+        frog.move(KeyEvent.KEYCODE_DPAD_RIGHT);
+        frog.move(KeyEvent.KEYCODE_DPAD_UP);
+        position = new int[]{6, 4};
+        assertEquals(frog.getPosition()[0], position[0]);
+        assertEquals(frog.getPosition()[1], position[1]);
+
+        frog.move(KeyEvent.KEYCODE_DPAD_LEFT);
+        frog.move(KeyEvent.KEYCODE_DPAD_Down);
+        position = new int[]{5, 5};
+
+        assertEquals(frog.getPosition()[0], position[0]);
+        assertEquals(frog.getPosition()[1], position[1]);
+    }
+
+    @Test
+    public void testScoreDiffIncreases() {
+        Game game = new Game();
+        int score0 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
+        int score1 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 9);
+        int score2 = game.getScore();
+        assertFalse((score1 - score0) == (score2 - score1));
+
+        score0 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 4, 5);
+        score1 = game.getScore();
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 3, 4);
+        score2 = game.getScore();
+        assertFalse((score1 - score0) == (score2 - score1));
     }
 }

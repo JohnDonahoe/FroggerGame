@@ -1,6 +1,7 @@
 package com.example.m1.Classes;
 
 import android.graphics.Rect;
+import android.view.KeyEvent;
 
 public class Frog {
     private String color;
@@ -75,5 +76,17 @@ public class Frog {
         }
         int[] temp = {position_x, position_y};
         return temp;
+    }
+
+    public int[] move(int event) {
+        if (event == KeyEvent.KEYCODE_DPAD_UP) {
+            return moveUp();
+        } else if (event == KeyEvent.KEYCODE_DPAD_DOWN) {
+            return moveDown();
+        } else if (event == KeyEvent.KEYCODE_DPAD_RIGHT) {
+            return moveRight();
+        } else if (event == KeyEvent.KEYCODE_DPAD_LEFT) {
+            return moveLeft();
+        }
     }
 }
