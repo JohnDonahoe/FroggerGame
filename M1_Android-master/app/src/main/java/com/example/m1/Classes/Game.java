@@ -84,9 +84,9 @@ public class Game {
         this.frog = frog;
     }
 
-    public int score(int event, int location_y, int maxHeight) {
-        if (event == KeyEvent.KEYCODE_DPAD_UP && location_y < maxHeight) {
-            maxHeight = location_y;
+    public int score(int event, int locationY, int maxHeight) {
+        if (event == KeyEvent.KEYCODE_DPAD_UP && locationY < maxHeight) {
+            maxHeight = locationY;
             switch (maxHeight) {
                 case 9:
                     score += 30;

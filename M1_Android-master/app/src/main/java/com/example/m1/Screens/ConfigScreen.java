@@ -11,12 +11,20 @@ import android.widget.*;
 
 public class ConfigScreen extends AppCompatActivity implements View.OnClickListener {
     protected static Game game;
-    private Button nameButton, start;
-    private RadioButton easy, medium, hard, red, blue, green;
+    private Button nameButton;
+    private Button start;
+    private RadioButton easy;
+    private RadioButton medium;
+    private RadioButton hard;
+    private RadioButton red;
+    private RadioButton blue;
+    private RadioButton green;
     private EditText enterNameBox;
     private TextView error;
 
-    private boolean nameSet, difficultySet, frogSet;
+    private boolean nameSet;
+    private boolean difficultySet;
+    private boolean frogSet;
     protected void onCreate(Bundle init) {
         super.onCreate(init);
         setContentView(R.layout.config_screen);
@@ -55,7 +63,7 @@ public class ConfigScreen extends AppCompatActivity implements View.OnClickListe
     }
 
     public void onClick(View view) {
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.button3:              //Name Button
                 nameSet = game.setName(enterNameBox.getText().toString());
                 if (!nameSet) {
@@ -97,7 +105,7 @@ public class ConfigScreen extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.game_screen);
     }
 
-    public static Game get_game() {
+    public static Game getGame() {
         return game;
     }
 }

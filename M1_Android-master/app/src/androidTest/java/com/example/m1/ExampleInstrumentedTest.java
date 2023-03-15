@@ -120,11 +120,11 @@ public class ExampleInstrumentedTest {
 
         car.updateF1Cars();
         //should move their positions to the right by one
-        assertEquals(car.f1Car1[0], 9);
-        assertEquals(car.f1Car1[1], 1);
+        assertEquals(car.getF1Car1()[0], 9);
+        assertEquals(car.getF1Car1()[1], 1);
 
-        assertEquals(car.f1Car2[0], 9);
-        assertEquals(car.f1Car2[1], 5);
+        assertEquals(car.getF1Car2()[0], 9);
+        assertEquals(car.getF1Car2()[1], 5);
     }
 
     @Test
@@ -148,22 +148,22 @@ public class ExampleInstrumentedTest {
     @Test
     public void testDiffCarSpeed() {
         Car car = new Car();
-        assertFalse(car.f1CarSpeed == car.pinkCarSpeed);
-        assertFalse(car.f1CarSpeed == car.truckSpeed);
-        assertFalse(car.truckSpeed == car.pinkCarSpeed);
+        assertFalse(car.getF1CarSpeed() == car.getPinkCarSpeed());
+        assertFalse(car.getF1CarSpeed() == car.getTruckSpeed());
+        assertFalse(car.getTruckSpeed() == car.getPinkCarSpeed());
     }
 
     @Test
     public void testDiffCarDirections() {
         Car car = new Car();
-        int f1CarStartPosition = car.f1Car1[1];
-        int pinkCarStartPosition = car.pinkCar1[1];
+        int f1CarStartPosition = car.getF1Car1()[1];
+        int pinkCarStartPosition = car.getPinkCar1()[1];
 
         car.updateF1Cars();
         car.updatePinkCars();
 
-        int f1CarFinalPosition = car.f1Car1[1];
-        int pinkCarFinalPosition = car.pinkCar1[1];
+        int f1CarFinalPosition = car.getF1Car1()[1];
+        int pinkCarFinalPosition = car.getPinkCar1()[1];
 
         int f1Change = f1CarFinalPosition - f1CarStartPosition;
         int pinkChange = pinkCarFinalPosition - pinkCarStartPosition;
