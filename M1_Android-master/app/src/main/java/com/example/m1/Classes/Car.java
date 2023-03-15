@@ -26,6 +26,10 @@ public class Car {
 
     public static int[][] truck2 = {{5, 5}, {5, 6}};
 
+    public static int f1CarSpeed = 2;
+    public static int pinkCarSpeed = 5;
+    public static int truckSpeed = 7;
+
 
     public static void updateTrucks() {
         truck1[0][1] = (truck1[0][1] - 1) % 8;
