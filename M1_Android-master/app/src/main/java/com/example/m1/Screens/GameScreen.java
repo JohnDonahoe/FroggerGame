@@ -105,23 +105,26 @@ public class GameScreen extends AppCompatActivity {
     public static void gameLoop() {
         timer++;
 
-
         // update f1 cars
         if (timer % 2 == 0) {
             Car.updateF1Cars();
+            if (checkDeath()) {
+                die();
+            }
         }
-
-
-
 
         if (timer % 5 == 0) {
             Car.updatePinkCars();
+            if (checkDeath()) {
+                die();
+            }
         }
-
-
 
         if (timer % 7 == 0) {
             Car.updateTrucks();
+            if (checkDeath()) {
+                die();
+            }
         }
         roadUpdate();
     }
@@ -175,6 +178,9 @@ public class GameScreen extends AppCompatActivity {
                 }
                 score.setText(Integer.toString(scoreNum));
             }
+            if (checkDeath()) {
+                die();
+            }
             return true;
             // Draw frog at new position
         case KeyEvent.KEYCODE_DPAD_DOWN:
@@ -185,6 +191,9 @@ public class GameScreen extends AppCompatActivity {
             location[0]++;
             sprite = imageDraws[location[0]][location[1]];
             sprite.setImageDrawable(spriteDraw);
+            if (checkDeath()) {
+                die();
+            }
             return true;
             // Draw frog at new position
         case KeyEvent.KEYCODE_DPAD_LEFT:
@@ -195,6 +204,9 @@ public class GameScreen extends AppCompatActivity {
             location[1]--;
             sprite = imageDraws[location[0]][location[1]];
             sprite.setImageDrawable(spriteDraw);
+            if (checkDeath()) {
+                die();
+            }
             return true;
             // Draw frog at new position
         case KeyEvent.KEYCODE_DPAD_RIGHT:
@@ -205,6 +217,9 @@ public class GameScreen extends AppCompatActivity {
             location[1]++;
             sprite = imageDraws[location[0]][location[1]];
             sprite.setImageDrawable(spriteDraw);
+            if (checkDeath()) {
+                die();
+            }
             return true;
             // Draw frog at new position
         default:
@@ -349,5 +364,78 @@ public class GameScreen extends AppCompatActivity {
 
         imageDraws[location[0]][location[1]].setImageDrawable(spriteDraw);
         // then set locations in Car.java to respective cars
+    }
+
+    public static void die() {
+        if (game.getLives() > 1) {
+            resetFrog();
+            resetScore();
+            game.takeLife();
+            lives.setText(Integer.toString(game.getLives()));
+        } else {
+            // Open Game Screen
+        }
+    }
+
+    private void resetFrog() {
+        sprite.setImageDrawable(null);                      // Erases old sprite
+        location = {10, 4};                                 // Resets location
+        sprite = imageDraws[location[0]][location[1]];      // Draws new sprite
+        sprite.setImageDrawable(spriteDraw);                // Shows sprite on screen
+    }
+
+    private void resetScore() {
+        scoreNum = 0;
+        maxHeight = 10;
+        score.setText(Integer.toString(scoreNum));
+    }
+
+    public static boolean checkDeath() {
+        row = location[0];
+        if (row <= 9 && row >= 5) {
+            return checkCollision(row);
+        } else if (row >= 0 && row <= 3) {
+            return checkWater(row);
+        } else {
+            return false;
+        }
+    }
+
+    private boolean checkCollision(int row) {
+        col = location[1];
+        switch (row) {
+            case 5:
+                if (col == Car.getTruck1()[0][1] || col == Car.getTruck1()[1][1] || col == Car.getTruck2()[0][1] || col == Car.getTruck2()[1][1]) {
+                    return true;
+                }
+                return false;
+            case 6:
+                if (col == Car.getF1Car3()[1] || col == Car.getF1Car4()[1]) {
+                    return true;
+                }
+                return false;
+            case 7:
+                if (col == Car.getPinkCar4()[1] || col == Car.getPinkCar5()[1]) {
+                    return true;
+                }
+                return false;
+            case 8:
+                if (col == Car.getPinkCar1()[1] || col == Car.getPinkCar2()[1] || col == Car.getPinkCar3()[1]) {
+                    return true;
+                }
+                return false;
+            case 9:
+                if (col == Car.getF1Car1()[1] || col == Car.getF1Car2()[1]) {
+                    return true;
+                }
+                return false;
+            default:
+                return false;
+        }
+    }
+
+    // Implementation will change once logs are added.
+    private boolean checkWater(int row) {
+        return true;
     }
 }
