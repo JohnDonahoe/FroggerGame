@@ -21,30 +21,30 @@ public class GameScreen extends AppCompatActivity {
 
     private Canvas canvas;
 
-    private TextView lives;
+    private static TextView lives;
 
     private TextView name;
 
-    private TextView score;
+    private static TextView score;
 
 
     private TextView difficulty;
 
     private ImageView gameViewing;
 
-    private ImageView sprite;
+    private static ImageView sprite;
 
     private static Drawable spriteDraw;
 
-    private int maxHeight = 10;
+    private static int maxHeight = 10;
 
     private static int[] location = {10, 4};
 
-    protected Game game;
+    protected static Game game;
 
     private static ImageView[][] imageDraws;
 
-    private int scoreNum = 0;
+    private static int scoreNum = 0;
 
 
     protected void onCreate(Bundle init) {
@@ -372,26 +372,28 @@ public class GameScreen extends AppCompatActivity {
             resetScore();
             game.takeLife();
             lives.setText(Integer.toString(game.getLives()));
+            roadUpdate();
         } else {
             // Open Game Screen
         }
     }
 
-    private void resetFrog() {
+    private static void resetFrog() {
         sprite.setImageDrawable(null);                      // Erases old sprite
-        location = {10, 4};                                 // Resets location
+        location[0] = 10;
+        location[1] = 4;                                    // Resets location
         sprite = imageDraws[location[0]][location[1]];      // Draws new sprite
         sprite.setImageDrawable(spriteDraw);                // Shows sprite on screen
     }
 
-    private void resetScore() {
+    private static void resetScore() {
         scoreNum = 0;
         maxHeight = 10;
         score.setText(Integer.toString(scoreNum));
     }
 
     public static boolean checkDeath() {
-        row = location[0];
+        int row = location[0];
         if (row <= 9 && row >= 5) {
             return checkCollision(row);
         } else if (row >= 0 && row <= 3) {
@@ -401,8 +403,8 @@ public class GameScreen extends AppCompatActivity {
         }
     }
 
-    private boolean checkCollision(int row) {
-        col = location[1];
+    private static boolean checkCollision(int row) {
+        int col = location[1];
         switch (row) {
             case 5:
                 if (col == Car.getTruck1()[0][1] || col == Car.getTruck1()[1][1] || col == Car.getTruck2()[0][1] || col == Car.getTruck2()[1][1]) {
@@ -435,7 +437,7 @@ public class GameScreen extends AppCompatActivity {
     }
 
     // Implementation will change once logs are added.
-    private boolean checkWater(int row) {
+    private static boolean checkWater(int row) {
         return true;
     }
 }

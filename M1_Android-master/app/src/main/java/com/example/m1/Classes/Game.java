@@ -124,4 +124,8 @@ public class Game {
         }
         return maxHeight;
     }
+
+    public void takeLife() {
+        lives--;
+    }
 }
