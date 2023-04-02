@@ -18,16 +18,22 @@ public class EndScreen extends AppCompatActivity {
 
         Button exit = findViewById(R.id.exitbutton4);
 
-        exit.setOnClickListener(e -> finish());
+        exit.setOnClickListener(V -> death());
 
         TextView score = findViewById(R.id.textView4);
 
-        score.setText(Integer.toString(Game.getScore()));
+        score.setText(Integer.toString(GameScreen.getScoreNum()));
     }
 
     public void restartGame() {
         Intent intent = new Intent(getApplicationContext(), ConfigScreen.class);
         startActivity(intent);
         setContentView(R.layout.config_screen);
+    }
+
+    public void death() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        startActivity(intent);
     }
 }

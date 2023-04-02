@@ -18,38 +18,42 @@ import java.util.concurrent.TimeUnit;
 
 public class GameScreen extends AppCompatActivity {
 
-
+    ScheduledExecutorService executorService;
     private Bitmap bitmap;
 
-    private static boolean dead = false;
+    private boolean dead = false;
 
 
     private Canvas canvas;
 
-    private static TextView lives;
+    private TextView lives;
 
     private TextView name;
 
-    private static TextView score;
+    private TextView score;
 
 
     private TextView difficulty;
 
     private ImageView gameViewing;
 
-    private static ImageView sprite;
+    private ImageView sprite;
 
-    private static Drawable spriteDraw;
+    private Drawable spriteDraw;
 
-    private static int maxHeight = 10;
+    private int maxHeight = 10;
 
-    private static int[] location = {10, 4};
+    private int[] location = {10, 4};
 
-    protected static Game game;
+    protected Game game;
 
-    private static ImageView[][] imageDraws;
+    private ImageView[][] imageDraws;
 
     private static int scoreNum = 0;
+
+    public static int getScoreNum() {
+        return scoreNum;
+    }
 
 
     protected void onCreate(Bundle init) {
@@ -99,21 +103,17 @@ public class GameScreen extends AppCompatActivity {
 
         // need to add loop in here
         // call gameLoop()
-        final ScheduledExecutorService executorService =
-                Executors.newSingleThreadScheduledExecutor();
-        executorService.scheduleAtFixedRate(GameScreen::gameLoop, 0, 2, TimeUnit.SECONDS);
-        while (!dead) {
-            int a = 1;
-        }
-        executorService.shutdownNow();
-        Intent intent = new Intent(getApplicationContext(), EndScreen.class);
-        startActivity(intent);
-        //setContentView(R.layout.end_screen);
+        executorService = Executors.newSingleThreadScheduledExecutor();
+        executorService.scheduleAtFixedRate(() -> gameLoop(), 0, 2, TimeUnit.SECONDS);
+        executorService.scheduleAtFixedRate(() -> gameLoop(), 0, 2, TimeUnit.SECONDS);
+        executorService.scheduleAtFixedRate(() -> gameLoop(), 0, 2, TimeUnit.SECONDS);
+        //executorService.shutdownNow();
+
     }
 
 
     private static int timer = 0;
-    public static void gameLoop() {
+    public void gameLoop() {
         timer++;
 
         // update f1 cars
@@ -293,7 +293,7 @@ public class GameScreen extends AppCompatActivity {
     private static Drawable bus1;
 
     private static Drawable bus2;
-    public static void roadUpdate() {
+    public void roadUpdate() {
         // set all road values to null
         //for (int i = 5; i < 10; i++) {
         //    for (int j = 0; j < 8; j++) {
@@ -377,7 +377,7 @@ public class GameScreen extends AppCompatActivity {
         // then set locations in Car.java to respective cars
     }
 
-    public static void die() {
+    public void die() {
         if (game.getLives() > 1) {
             resetFrog();
             resetScore();
@@ -385,13 +385,17 @@ public class GameScreen extends AppCompatActivity {
             lives.setText(Integer.toString(game.getLives()));
             roadUpdate();
         } else {
-            dead = true;
+            executorService.shutdownNow();
+            Intent intent = new Intent(getApplicationContext(), EndScreen.class);
+            startActivity(intent);
+            setContentView(R.layout.end_screen);
+            finish();
         }
     }
 
 
 
-    private static void resetFrog() {
+    private void resetFrog() {
         sprite.setImageDrawable(null);                      // Erases old sprite
         location[0] = 10;
         location[1] = 4;                                    // Resets location
@@ -399,13 +403,13 @@ public class GameScreen extends AppCompatActivity {
         sprite.setImageDrawable(spriteDraw);                // Shows sprite on screen
     }
 
-    private static void resetScore() {
+    private void resetScore() {
         scoreNum = 0;
         maxHeight = 10;
         score.setText(Integer.toString(scoreNum));
     }
 
-    public static boolean checkDeath() {
+    public boolean checkDeath() {
         int row = location[0];
         if (row <= 9 && row >= 5) {
             return checkCollision(row);
@@ -416,7 +420,7 @@ public class GameScreen extends AppCompatActivity {
         }
     }
 
-    private static boolean checkCollision(int row) {
+    private boolean checkCollision(int row) {
         int col = location[1];
         switch (row) {
             case 5:
