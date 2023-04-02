@@ -4,4 +4,30 @@
                                                    xmlns:tools="http://schemas.android.com/tools"
                                                    android:layout_width="match_parent"
                                                    android:layout_height="match_parent"
-                                                   tools:context=".Screens.StartScreen"/>
+                                                   tools:context=".Screens.StartScreen">
+    <Button
+            android:text="Try Again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/button" tools:layout_editor_absoluteY="533dp"
+            tools:layout_editor_absoluteX="148dp"/>
+    <TextView
+            android:text="You Lost!"
+            android:layout_width="151dp"
+            android:layout_height="76dp" android:id="@+id/textView" tools:layout_editor_absoluteY="293dp"
+            tools:layout_editor_absoluteX="130dp" android:textSize="36sp"/>
+    <Button
+            android:text="Exit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/exitbutton4" tools:layout_editor_absoluteY="609dp"
+            tools:layout_editor_absoluteX="153dp"/>
+    <TextView
+            android:text="Final Score:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView3" tools:layout_editor_absoluteY="421dp"
+            tools:layout_editor_absoluteX="148dp"/>
+    <TextView
+            android:text="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView4" tools:layout_editor_absoluteY="421dp"
+            tools:layout_editor_absoluteX="233dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

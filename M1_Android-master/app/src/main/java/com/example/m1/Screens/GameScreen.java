@@ -1,4 +1,5 @@
 package com.example.m1.Screens;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -17,7 +18,11 @@ import java.util.concurrent.TimeUnit;
 
 public class GameScreen extends AppCompatActivity {
 
+
     private Bitmap bitmap;
+
+    private static boolean dead = false;
+
 
     private Canvas canvas;
 
@@ -72,6 +77,7 @@ public class GameScreen extends AppCompatActivity {
         bus2 = getDrawable(R.drawable.bus2);
 
 
+
         sprite = imageDraws[10][4];
 
         switch (game.getFrog().getColor()) {
@@ -96,8 +102,13 @@ public class GameScreen extends AppCompatActivity {
         final ScheduledExecutorService executorService =
                 Executors.newSingleThreadScheduledExecutor();
         executorService.scheduleAtFixedRate(GameScreen::gameLoop, 0, 2, TimeUnit.SECONDS);
-        executorService.scheduleAtFixedRate(GameScreen::gameLoop, 0, 2, TimeUnit.SECONDS);
-        executorService.scheduleAtFixedRate(GameScreen::gameLoop, 0, 2, TimeUnit.SECONDS);
+        while (!dead) {
+            int a = 1;
+        }
+        executorService.shutdownNow();
+        Intent intent = new Intent(getApplicationContext(), EndScreen.class);
+        startActivity(intent);
+        //setContentView(R.layout.end_screen);
     }
 
 
@@ -374,9 +385,11 @@ public class GameScreen extends AppCompatActivity {
             lives.setText(Integer.toString(game.getLives()));
             roadUpdate();
         } else {
-            // Open Game Screen
+            dead = true;
         }
     }
+
+
 
     private static void resetFrog() {
         sprite.setImageDrawable(null);                      // Erases old sprite

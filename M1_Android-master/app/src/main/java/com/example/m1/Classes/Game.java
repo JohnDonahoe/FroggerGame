@@ -7,14 +7,14 @@ public class Game {
     private String difficulty;
     private int lives;
     private Frog frog;
-    private int score;
+    private static int score;
 
     public Game(String name, String difficulty, int lives, Frog frog) {
         this.name = name;
         this.difficulty = difficulty;
         this.lives = lives;
         this.frog = frog;
-        this.score = 0;
+        score = 0;
     }
 
     public Game() {
@@ -42,8 +42,8 @@ public class Game {
     }
 
     //Returns: score as int
-    public int getScore() {
-        return this.score;
+    public static int getScore() {
+        return score;
     }
 
     //  Sets the user's name
