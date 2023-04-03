@@ -270,11 +270,48 @@ public class ExampleInstrumentedTest {
         //returns false when out of lives for the end Game Screen ti be shown
         assertFalse(game.hitWater());
     }
+
+    @Test
     public void testGameOverWhenNoMoreLivesAfterHitCar() {
         Game game = new Game();
         game.setLives(1);
         //returns false when out of lives for the end game screen to be shown
         assertFalse(game.hitCar());
     }
+
+    @Test
+    public void testKeepsHighestScore() {
+        Game game = new Game();
+        game.setLives(3);
+        game.setScore(60);
+        game.hitWater();
+        assertEquals(0, game.getTheScore());
+        assertEquals(60, game.getHighestScore());
+        game.setScore(30);
+        game.hitWater();
+        assertEquals(60, game.getHighestScore());
+    }
+
+    @Test
+    public void testRespawnIsOriginalLocation() {
+        Game game = new Game();
+        game.setLives(3);
+        game.setFrog(new Frog());
+        int x = game.getFrog().getPosX();
+        int y = game.getFrog().getPosY();
+        game.getFrog().moveLeft();
+        game.hitCar();
+        assertEquals(x, game.getFrog().getPosX());
+        assertEquals(y, game.getFrog().getPosY());
+
+        game = new Game();
+        game.setLives(3);
+        game.setFrog(new Frog());
+        x = game.getFrog().getPosX();
+        y = game.getFrog().getPosY();
+        game.getFrog().moveLeft();
+        game.hitWater();
+        assertEquals(x, game.getFrog().getPosX());
+        assertEquals(y, game.getFrog().getPosY());
     }
 }
