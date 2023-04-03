@@ -314,4 +314,24 @@ public class ExampleInstrumentedTest {
         assertEquals(x, game.getFrog().getPosX());
         assertEquals(y, game.getFrog().getPosY());
     }
+
+    @Test
+    public void testRespawnAfterWater() {
+        Game game = new Game();
+        game.setLives(3);
+        game.getFrog().moveLeft();
+        game.hitWater();
+        assertEquals(6, game.getFrog().getPosX());
+        assertEquals(12, game.getFrog().getPosY());
+    }
+
+    @Test
+    public void testRespawnAfterCar() {
+        Game game = new Game();
+        game.setLives(3);
+        game.getFrog().moveLeft();
+        game.hitCar();
+        assertEquals(6, game.getFrog().getPosX());
+        assertEquals(12, game.getFrog().getPosY());
+    }
 }
