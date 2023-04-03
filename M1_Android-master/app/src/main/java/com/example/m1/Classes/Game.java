@@ -8,6 +8,7 @@ public class Game {
     private int lives;
     private Frog frog;
     private static int score;
+    private int highestScore;
 
     public Game(String name, String difficulty, int lives, Frog frog) {
         this.name = name;
@@ -15,10 +16,11 @@ public class Game {
         this.lives = lives;
         this.frog = frog;
         score = 0;
+        highestScore = 0;
     }
 
     public Game() {
-        this(null, null, 0, null);
+        this(null, null, 0, new Frog());
     }
 
     // Returns: name as string
@@ -127,5 +129,47 @@ public class Game {
 
     public void takeLife() {
         lives--;
+    }
+
+    public boolean hitWater() {
+        if (lives > 1) {
+            lives--;
+            if (score > highestScore) {
+                highestScore = score;
+            }
+            score = 0;
+            frog.resetPos();
+            return true;
+        }
+        return false;
+    }
+
+    public void setLives(int i) {
+        lives = i;
+    }
+
+    public boolean hitCar() {
+        if (lives > 1) {
+            lives--;
+            if (score > highestScore) {
+                highestScore = score;
+            }
+            score = 0;
+            frog.resetPos();
+            return true;
+        }
+        return false;
+    }
+
+    public void setScore(int i) {
+        score = i;
+    }
+
+    public int getTheScore() {
+        return score;
+    }
+
+    public int getHighestScore() {
+        return highestScore;
     }
 }

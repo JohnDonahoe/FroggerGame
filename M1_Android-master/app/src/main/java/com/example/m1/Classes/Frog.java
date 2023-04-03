@@ -10,6 +10,11 @@ public class Frog {
     private int positionX;
     private int positionY;
 
+    public Frog() {
+        this("Blue", 0, 0, 0, 0);
+
+    }
+
     public Frog(String color, int left, int top, int right, int bottom) {
         this.color = color;
         if (color.equals("Blue")) {
@@ -89,5 +94,18 @@ public class Frog {
             return moveLeft();
         }
         return new int[]{positionX, positionY};
+    }
+
+    public void resetPos() {
+        positionX = 6;
+        positionY = 12;
+    }
+
+    public int getPosX() {
+        return positionX;
+    }
+
+    public int getPosY() {
+        return positionY;
     }
 }

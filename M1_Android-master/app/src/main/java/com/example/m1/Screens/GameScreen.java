@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class GameScreen extends AppCompatActivity {
 
-    ScheduledExecutorService executorService;
+    private ScheduledExecutorService executorService;
     private Bitmap bitmap;
 
     private boolean dead = false;
@@ -423,33 +423,36 @@ public class GameScreen extends AppCompatActivity {
     private boolean checkCollision(int row) {
         int col = location[1];
         switch (row) {
-            case 5:
-                if (col == Car.getTruck1()[0][1] || col == Car.getTruck1()[1][1] || col == Car.getTruck2()[0][1] || col == Car.getTruck2()[1][1]) {
-                    return true;
-                }
-                return false;
-            case 6:
-                if (col == Car.getF1Car3()[1] || col == Car.getF1Car4()[1]) {
-                    return true;
-                }
-                return false;
-            case 7:
-                if (col == Car.getPinkCar4()[1] || col == Car.getPinkCar5()[1]) {
-                    return true;
-                }
-                return false;
-            case 8:
-                if (col == Car.getPinkCar1()[1] || col == Car.getPinkCar2()[1] || col == Car.getPinkCar3()[1]) {
-                    return true;
-                }
-                return false;
-            case 9:
-                if (col == Car.getF1Car1()[1] || col == Car.getF1Car2()[1]) {
-                    return true;
-                }
-                return false;
-            default:
-                return false;
+        case 5:
+            if (col == Car.getTruck1()[0][1] || col == Car.getTruck1()[1][1]
+                    || col == Car.getTruck2()[0][1]
+                    || col == Car.getTruck2()[1][1]) {
+                return true;
+            }
+            return false;
+        case 6:
+            if (col == Car.getF1Car3()[1] || col == Car.getF1Car4()[1]) {
+                return true;
+            }
+            return false;
+        case 7:
+            if (col == Car.getPinkCar4()[1] || col == Car.getPinkCar5()[1]) {
+                return true;
+            }
+            return false;
+        case 8:
+            if (col == Car.getPinkCar1()[1] || col == Car.getPinkCar2()[1]
+                    || col == Car.getPinkCar3()[1]) {
+                return true;
+            }
+            return false;
+        case 9:
+            if (col == Car.getF1Car1()[1] || col == Car.getF1Car2()[1]) {
+                return true;
+            }
+            return false;
+        default:
+            return false;
         }
     }
 
