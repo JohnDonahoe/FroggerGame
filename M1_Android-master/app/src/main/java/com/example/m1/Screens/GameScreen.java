@@ -69,6 +69,7 @@ public class GameScreen extends AppCompatActivity {
         name = (TextView) findViewById(R.id.name_display);
         score = (TextView) findViewById(R.id.points_display);
         score.setText(Integer.toString(game.getScore()));
+        scoreNum = 0;
         difficulty = (TextView) findViewById(R.id.difficulty_display);
         //gameViewing = (ImageView) findViewById(R.id.gameImage);
         difficulty.setText(game.getDifficulty());

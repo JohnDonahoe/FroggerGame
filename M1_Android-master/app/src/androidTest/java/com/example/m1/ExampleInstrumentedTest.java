@@ -244,4 +244,22 @@ public class ExampleInstrumentedTest {
         game.hitWater();
         assertEquals(0, game.getTheScore());
     }
+
+    @Test
+    public void testLoseLifeFromCar() {
+        Game game = new Game();
+        game.setLives(3);
+        //  returns true when they are not out of lives
+        assertTrue(game.hitCar());
+        assertEquals(2, game.getLives());
+    }
+
+    @Test
+    public void testScoreResetFromCar() {
+        Game game = new Game();
+        game.setLives(3);
+        game.setScore(30);
+        game.hitCar();
+        assertEquals(0, game.getTheScore());
+    }
 }
