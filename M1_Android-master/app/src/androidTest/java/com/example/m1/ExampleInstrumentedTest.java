@@ -262,4 +262,19 @@ public class ExampleInstrumentedTest {
         game.hitCar();
         assertEquals(0, game.getTheScore());
     }
+
+    @Test
+    public void testGameOverWhenNoMoreLivesAfterHitWater () {
+        Game game = new Game();
+        game.setLives(1);
+        //returns false when out of lives for the end Game Screen ti be shown
+        assertFalse(game.hitWater());
+    }
+    public void testGameOverWhenNoMoreLivesAfterHitCar() {
+        Game game = new Game();
+        game.setLives(1);
+        //returns false when out of lives for the end game screen to be shown
+        assertFalse(game.hitCar());
+    }
+    }
 }
