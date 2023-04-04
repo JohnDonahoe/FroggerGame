@@ -8,8 +8,6 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.m1.Classes.*;
 import com.example.m1.R;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -48,6 +46,8 @@ public class GameScreen extends AppCompatActivity {
 
     private ImageView[] goalTiles;
 
+    private ImageView[][] logTiles;
+
     private static int scoreNum = 0;
 
     public static int getScoreNum() {
@@ -80,8 +80,7 @@ public class GameScreen extends AppCompatActivity {
         bus1 = getDrawable(R.drawable.bus1);
         bus2 = getDrawable(R.drawable.bus2);
 
-        goalTiles = new ImageView[]{findViewById(R.id.Goal1), findViewById(R.id.Goal2),
-                findViewById(R.id.Goal3), findViewById(R.id.Goal4)};
+
 
 
         sprite = imageDraws[10][4];
@@ -241,6 +240,7 @@ public class GameScreen extends AppCompatActivity {
     }
 
     public void initImageDraws() {
+
         imageDraws = new ImageView[][]{
                 {findViewById(R.id.river03), findViewById(R.id.river13),
                         findViewById(R.id.river23), findViewById(R.id.river33),
@@ -287,6 +287,34 @@ public class GameScreen extends AppCompatActivity {
                         findViewById(R.id.base4), findViewById(R.id.base5),
                         findViewById(R.id.base6), findViewById(R.id.base7)}
         };
+
+
+        goalTiles = new ImageView[]{findViewById(R.id.Goal1), findViewById(R.id.Goal2),
+                findViewById(R.id.Goal3), findViewById(R.id.Goal4)};
+
+
+
+        logTiles = new ImageView[][]{
+                {findViewById(R.id.log03), findViewById(R.id.log13),
+                        findViewById(R.id.log23), findViewById(R.id.log33),
+                        findViewById(R.id.log43), findViewById(R.id.log53),
+                        findViewById(R.id.log63), findViewById(R.id.log73)},
+                {findViewById(R.id.log02), findViewById(R.id.log12),
+                        findViewById(R.id.log22), findViewById(R.id.log32),
+                        findViewById(R.id.log42), findViewById(R.id.log52),
+                        findViewById(R.id.log62), findViewById(R.id.log72)},
+                {findViewById(R.id.log01), findViewById(R.id.log11),
+                        findViewById(R.id.log21), findViewById(R.id.log31),
+                        findViewById(R.id.log41), findViewById(R.id.log51),
+                        findViewById(R.id.log61), findViewById(R.id.log71)},
+                {findViewById(R.id.log00), findViewById(R.id.log10),
+                        findViewById(R.id.log20), findViewById(R.id.log30),
+                        findViewById(R.id.log40), findViewById(R.id.log50),
+                        findViewById(R.id.log60), findViewById(R.id.log70)}
+        };
+
+
+
     }
 
     private static Drawable f1;

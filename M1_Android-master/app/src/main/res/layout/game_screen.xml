@@ -82,7 +82,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log00" android:translationY="150dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river00" android:translationY="150dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log70" android:translationY="150dp" android:translationX="357dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -90,7 +98,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log60" android:translationY="150dp" android:translationX="306dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river60" android:translationY="150dp" android:translationX="306dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log50" android:translationY="150dp" android:translationX="255dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -98,7 +114,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log40" android:translationY="150dp" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river40" android:translationY="150dp" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log30" android:translationY="150dp" android:translationX="153dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -106,7 +130,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log10" android:translationY="150dp" android:translationX="51dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river10" android:translationY="150dp" android:translationX="51dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log20" android:translationY="150dp" android:translationX="102dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -114,7 +146,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log01" android:translationY="100dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river01" android:translationY="100dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log71" android:translationY="100dp" android:translationX="357dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -122,7 +162,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log61" android:translationY="100dp" android:translationX="306dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river61" android:translationY="100dp" android:translationX="306dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log51" android:translationY="100dp" android:translationX="255dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -130,7 +178,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log41" android:translationY="100dp" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river41" android:translationY="100dp" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log31" android:translationY="100dp" android:translationX="153dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -138,7 +194,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log11" android:translationY="100dp" android:translationX="51dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river11" android:translationY="100dp" android:translationX="51dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log21" android:translationY="100dp" android:translationX="102dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -146,7 +210,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log72" android:translationY="50dp" android:translationX="357dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river72" android:translationY="50dp" android:translationX="357dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log62" android:translationY="50dp" android:translationX="306dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -154,7 +226,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log02" android:translationY="50dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river02" android:translationY="50dp" android:translationX="0dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log52" android:translationY="50dp" android:translationX="255dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -162,7 +242,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log42" android:translationY="50dp" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river42" android:translationY="50dp" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log32" android:translationY="50dp" android:translationX="153dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -170,7 +258,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log22" android:translationY="50dp" android:translationX="102dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river22" android:translationY="50dp" android:translationX="102dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log23" android:translationX="102dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -178,11 +274,24 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log13" android:translationX="51dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river13" android:translationX="51dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log03"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river03"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log33" tools:layout_editor_absoluteX="204dp"
+                tools:layout_editor_absoluteY="2dp" android:translationX="153dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -191,7 +300,15 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log43" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river43" android:translationX="204dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log53" android:translationX="255dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -199,11 +316,23 @@
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log63" android:translationX="306dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river63" android:translationX="306dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
+                android:id="@+id/log73" android:translationX="357dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
                 android:id="@+id/river73" android:translationX="357dp"/>
+        <ImageView
+                android:layout_width="51dp"
+                android:layout_height="50dp"
+                android:id="@+id/log12" android:translationY="50dp" android:translationX="51dp"/>
         <ImageView
                 android:layout_width="51dp"
                 android:layout_height="50dp"
@@ -513,19 +642,19 @@
 
         <ImageView
                 android:layout_width="100dp"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:layout_height="match_parent"
                 android:id="@+id/Goal3" android:translationX="206dp"/>
         <ImageView
                 android:layout_width="100dp"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:layout_height="match_parent"
                 android:id="@+id/Goal4" android:translationX="309dp"/>
         <ImageView
                 android:layout_width="100dp"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:layout_height="match_parent"
                 android:id="@+id/Goal1"/>
         <ImageView
                 android:layout_width="100dp"
-                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:layout_height="match_parent"
                 android:id="@+id/Goal2" android:translationX="103dp"/>
     </FrameLayout>
 
