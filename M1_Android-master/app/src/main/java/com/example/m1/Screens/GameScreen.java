@@ -49,6 +49,8 @@ public class GameScreen extends AppCompatActivity {
 
     private ImageView[][] imageDraws;
 
+    private ImageView[] goalTiles;
+
     private static int scoreNum = 0;
 
     public static int getScoreNum() {
@@ -81,6 +83,8 @@ public class GameScreen extends AppCompatActivity {
         bus1 = getDrawable(R.drawable.bus1);
         bus2 = getDrawable(R.drawable.bus2);
 
+        goalTiles = new ImageView[]{findViewById(R.id.Goal1), findViewById(R.id.Goal2),
+                findViewById(R.id.Goal3), findViewById(R.id.Goal4)};
 
 
         sprite = imageDraws[10][4];

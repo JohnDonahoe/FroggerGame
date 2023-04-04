@@ -511,6 +511,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
+        <ImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:id="@+id/Goal3" android:translationX="206dp"/>
+        <ImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:id="@+id/Goal4" android:translationX="309dp"/>
+        <ImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:id="@+id/Goal1"/>
+        <ImageView
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" app:srcCompat="@drawable/ic_launcher_foreground"
+                android:id="@+id/Goal2" android:translationX="103dp"/>
     </FrameLayout>
 
 
