@@ -19,12 +19,10 @@ import java.util.concurrent.TimeUnit;
 public class GameScreen extends AppCompatActivity {
 
     private ScheduledExecutorService executorService;
-    private Bitmap bitmap;
+
 
     private boolean dead = false;
 
-
-    private Canvas canvas;
 
     private TextView lives;
 
@@ -35,7 +33,6 @@ public class GameScreen extends AppCompatActivity {
 
     private TextView difficulty;
 
-    private ImageView gameViewing;
 
     private ImageView sprite;
 
@@ -299,12 +296,7 @@ public class GameScreen extends AppCompatActivity {
 
     private static Drawable bus2;
     public void roadUpdate() {
-        // set all road values to null
-        //for (int i = 5; i < 10; i++) {
-        //    for (int j = 0; j < 8; j++) {
-        //        imageDraws[i][j].setImageDrawable(null);
-        //    }
-        //}
+
 
 
 
@@ -396,6 +388,14 @@ public class GameScreen extends AppCompatActivity {
             setContentView(R.layout.end_screen);
             finish();
         }
+    }
+
+    public void win() {
+        executorService.shutdownNow();
+        Intent intent = new Intent(getApplicationContext(), WinScreen.class);
+        startActivity(intent);
+        setContentView(R.layout.win_screen);
+        finish();
     }
 
 
