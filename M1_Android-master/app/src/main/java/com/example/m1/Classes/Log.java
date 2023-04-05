@@ -32,14 +32,14 @@ public class Log {
 
 
     public static void updateRow1() {
-        row1Log1[0][1] = (row1Log1[0][1] - 1) % 8;
-        row1Log1[1][1] = (row1Log1[1][1] - 1) % 8;
+        row1Log1[0][1] = (row1Log1[0][1] - 1 == -1 ? 7 : row1Log1[0][1] - 1);
+        row1Log1[1][1] = (row1Log1[1][1] - 1 == -1 ? 7 : row1Log1[1][1] - 1);
 
-        row1Log2[0][1] = (row1Log2[0][1] - 1) % 8;
-        row1Log2[1][1] = (row1Log2[1][1] - 1) % 8;
+        row1Log2[0][1] = (row1Log2[0][1] - 1 == -1 ? 7 : row1Log2[0][1] - 1);
+        row1Log2[1][1] = (row1Log2[1][1] - 1 == -1 ? 7 : row1Log2[1][1] - 1);
 
-        row1Log3[0][1] = (row1Log3[0][1] - 1) % 8;
-        row1Log3[1][1] = (row1Log3[1][1] - 1) % 8;
+        row1Log3[0][1] = (row1Log3[0][1] - 1 == -1 ? 7 : row1Log3[0][1] - 1);
+        row1Log3[1][1] = (row1Log3[1][1] - 1 == -1 ? 7 : row1Log3[1][1] - 1);
     }
 
     public static void updateRow2() {
@@ -53,13 +53,13 @@ public class Log {
     }
 
     public static void updateRow3() {
-        row3Log1[0][1] = (row3Log1[0][1] - 1) % 8;
-        row3Log1[1][1] = (row3Log1[1][1] - 1) % 8;
-        row3Log1[2][1] = (row3Log1[2][1] - 1) % 8;
+        row3Log1[0][1] = (row3Log1[0][1] - 1 == -1 ? 7 : row3Log1[0][1] - 1);
+        row3Log1[1][1] = (row3Log1[1][1] - 1 == -1 ? 7 : row3Log1[1][1] - 1);
+        row3Log1[2][1] = (row3Log1[2][1] - 1 == -1 ? 7 : row3Log1[2][1] - 1);
 
-        row3Log2[0][1] = (row3Log2[0][1] - 1) % 8;
-        row3Log2[1][1] = (row3Log2[1][1] - 1) % 8;
-        row3Log2[2][1] = (row3Log2[2][1] - 1) % 8;
+        row3Log2[0][1] = (row3Log2[0][1] - 1 == -1 ? 7 : row3Log2[0][1] - 1);
+        row3Log2[1][1] = (row3Log2[1][1] - 1 == -1 ? 7 : row3Log2[1][1] - 1);
+        row3Log2[2][1] = (row3Log2[2][1] - 1 == -1 ? 7 : row3Log2[2][1] - 1);
     }
 
     public static void updateRow4() {
@@ -71,5 +71,36 @@ public class Log {
 
         row4Log3[0][1] = (row4Log3[0][1] + 1) % 8;
         row4Log3[1][1] = (row4Log3[1][1] + 1) % 8;
+    }
+
+    public static int[][] getRow1Log1() {
+        return row1Log1;
+    }
+    public static int[][] getRow1Log2() {
+        return row1Log2;
+    }
+    public static int[][] getRow1Log3() {
+        return row1Log3;
+    }
+    public static int[][] getRow2Log1() {
+        return row2Log1;
+    }
+    public static int[][] getRow2Log2() {
+        return row2Log2;
+    }
+    public static int[][] getRow3Log1() {
+        return row3Log1;
+    }
+    public static int[][] getRow3Log2() {
+        return row3Log2;
+    }
+    public static int[][] getRow4Log1() {
+        return row4Log1;
+    }
+    public static int[][] getRow4Log2() {
+        return row4Log2;
+    }
+    public static int[][] getRow4Log3() {
+        return row4Log3;
     }
 }

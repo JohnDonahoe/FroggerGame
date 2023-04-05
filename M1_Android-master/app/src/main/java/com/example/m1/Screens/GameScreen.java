@@ -80,6 +80,10 @@ public class GameScreen extends AppCompatActivity {
         bus1 = getDrawable(R.drawable.bus1);
         bus2 = getDrawable(R.drawable.bus2);
 
+        logLeft = getDrawable(R.drawable.logleft);
+        logMiddle = getDrawable(R.drawable.logmiddle);
+        logRight = getDrawable(R.drawable.logright);
+
 
 
 
@@ -120,6 +124,21 @@ public class GameScreen extends AppCompatActivity {
         // update f1 cars
         if (timer % 2 == 0) {
             Car.updateF1Cars();
+            Log.updateRow3();
+            if (checkDeath()) {
+                die();
+            }
+        }
+
+        if (timer % 3 == 0) {
+            Log.updateRow1();
+            if (checkDeath()) {
+                die();
+            }
+        }
+
+        if (timer % 4 == 0) {
+            Log.updateRow2();
             if (checkDeath()) {
                 die();
             }
@@ -127,6 +146,7 @@ public class GameScreen extends AppCompatActivity {
 
         if (timer % 5 == 0) {
             Car.updatePinkCars();
+            Log.updateRow4();
             if (checkDeath()) {
                 die();
             }
@@ -139,6 +159,7 @@ public class GameScreen extends AppCompatActivity {
             }
         }
         roadUpdate();
+        logUpdate();
     }
 
     @Override
@@ -323,6 +344,12 @@ public class GameScreen extends AppCompatActivity {
     private static Drawable bus1;
 
     private static Drawable bus2;
+
+    private static Drawable logLeft;
+
+    private static Drawable logMiddle;
+
+    private static Drawable logRight;
     public void roadUpdate() {
 
 
@@ -400,6 +427,67 @@ public class GameScreen extends AppCompatActivity {
 
         imageDraws[location[0]][location[1]].setImageDrawable(spriteDraw);
         // then set locations in Car.java to respective cars
+    }
+
+    public void logUpdate() {
+
+        logTiles[Log.getRow1Log1()[0][0]][Log.getRow1Log1()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow1Log1()[1][0]][Log.getRow1Log1()[1][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow1Log1()[1][0]]
+            [Log.getRow1Log1()[1][1] + 1 < 8 ? Log.getRow1Log1()[1][1] + 1 : 0].setImageDrawable(null);
+
+        logTiles[Log.getRow1Log2()[0][0]][Log.getRow1Log2()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow1Log2()[1][0]][Log.getRow1Log2()[1][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow1Log2()[1][0]]
+            [Log.getRow1Log2()[1][1] + 1 < 8 ? Log.getRow1Log2()[1][1] + 1 : 0].setImageDrawable(null);
+
+        logTiles[Log.getRow1Log3()[0][0]][Log.getRow1Log3()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow1Log3()[1][0]][Log.getRow1Log3()[1][1]].setImageDrawable(logRight);
+
+
+
+
+
+
+        logTiles[Log.getRow2Log1()[0][0]][Log.getRow2Log1()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow2Log1()[1][0]][Log.getRow2Log1()[1][1]].setImageDrawable(logMiddle);
+        logTiles[Log.getRow2Log1()[2][0]][Log.getRow2Log1()[2][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow2Log1()[0][0]][Log.getRow2Log1()[0][1] - 1 > -1 ? Log.getRow2Log1()[0][1] - 1 : 7].setImageDrawable(null);
+
+        logTiles[Log.getRow2Log2()[0][0]][Log.getRow2Log2()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow2Log2()[1][0]][Log.getRow2Log2()[1][1]].setImageDrawable(logMiddle);
+        logTiles[Log.getRow2Log2()[2][0]][Log.getRow2Log2()[2][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow2Log2()[0][0]][Log.getRow2Log2()[0][1] - 1 > -1 ? Log.getRow2Log2()[0][1] - 1 : 7].setImageDrawable(null);
+
+
+
+
+
+        logTiles[Log.getRow3Log1()[0][0]][Log.getRow3Log1()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow3Log1()[1][0]][Log.getRow3Log1()[1][1]].setImageDrawable(logMiddle);
+        logTiles[Log.getRow3Log1()[2][0]][Log.getRow3Log1()[2][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow3Log1()[2][0]][Log.getRow3Log1()[2][1] + 1 > 7 ? 0 : Log.getRow3Log1()[2][1] + 1].setImageDrawable(null);
+
+        logTiles[Log.getRow3Log2()[0][0]][Log.getRow3Log2()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow3Log2()[1][0]][Log.getRow3Log2()[1][1]].setImageDrawable(logMiddle);
+        logTiles[Log.getRow3Log2()[2][0]][Log.getRow3Log2()[2][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow3Log2()[2][0]][Log.getRow3Log2()[2][1] + 1 > 7 ? 0 : Log.getRow3Log2()[2][1] + 1].setImageDrawable(null);
+
+
+
+
+
+        logTiles[Log.getRow4Log1()[0][0]][Log.getRow4Log1()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow4Log1()[1][0]][Log.getRow4Log1()[1][1]].setImageDrawable(logRight);
+        //logTiles[Log.getRow4Log1()[0][0]][Log.getRow4Log1()[0][1] - 1 > -1 ? Log.getRow4Log1()[0][1] - 1 : 7].setImageDrawable(null);
+
+        logTiles[Log.getRow4Log2()[0][0]][Log.getRow4Log2()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow4Log2()[1][0]][Log.getRow4Log2()[1][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow4Log2()[0][0]][Log.getRow4Log2()[0][1] - 1 > -1 ? Log.getRow4Log2()[0][1] - 1 : 7].setImageDrawable(null);
+
+        logTiles[Log.getRow4Log3()[0][0]][Log.getRow4Log3()[0][1]].setImageDrawable(logLeft);
+        logTiles[Log.getRow4Log3()[1][0]][Log.getRow4Log3()[1][1]].setImageDrawable(logRight);
+        logTiles[Log.getRow4Log3()[0][0]][Log.getRow4Log3()[0][1] - 1 > -1 ? Log.getRow4Log3()[0][1] - 1 : 7].setImageDrawable(null);
     }
 
     public void die() {
