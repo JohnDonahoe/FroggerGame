@@ -74,7 +74,7 @@
             android:id="@+id/River"
             android:layout_width="420dp"
             android:layout_height="200dp"
-            android:background="#00cafc"
+            android:background="#000047"
             app:layout_constraintBottom_toTopOf="@+id/Safe_Tile"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -635,7 +635,7 @@
             android:id="@+id/Goal"
             android:layout_width="409dp"
             android:layout_height="100dp"
-            android:background="#FF60CB"
+            android:background="@android:color/holo_green_dark"
             app:layout_constraintBottom_toTopOf="@+id/River"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
