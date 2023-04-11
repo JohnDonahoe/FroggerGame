@@ -586,6 +586,30 @@ public class GameScreen extends AppCompatActivity {
 
     // Implementation will change once logs are added.
     private static boolean checkWater(int row) {
-        return true;
+        int col = location[1];
+        switch (row) {
+            case 0:
+                if (col == Log.getRow4Log1()[0][1] || col == Log.getRow4Log1()[1][1] || col == Log.getRow4Log2()[0][1] || col == Log.getRow4Log2()[1][1] || col == Log.getRow4Log3()[0][1] || col == Log.getRow4Log3()[1][1]) {
+                    return false;
+                }
+                return true;
+            case 1:
+                if (col == Log.getRow3Log1()[0][1] || col == Log.getRow3Log1()[1][1] || col == Log.getRow3Log2()[0][1] || col == Log.getRow3Log2()[1][1]) {
+                    return false;
+                }
+                return true;
+            case 2:
+                if (col == Log.getRow2Log1()[0][1] || col == Log.getRow2Log1()[1][1] || col == Log.getRow2Log2()[0][1] || col == Log.getRow2Log2()[1][1]) {
+                    return false;
+                }
+                return true;
+            case 3:
+                if (col == Log.getRow1Log1()[0][1] || col == Log.getRow1Log1()[1][1] || col == Log.getRow1Log2()[0][1] || col == Log.getRow1Log2()[1][1] || col == Log.getRow1Log3()[0][1] || col == Log.getRow1Log3()[1][1]) {
+                    return false;
+                }
+                return true;
+            default:
+                return false;
+        }
     }
 }
