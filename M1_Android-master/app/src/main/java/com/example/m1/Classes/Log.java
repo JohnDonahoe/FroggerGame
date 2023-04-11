@@ -103,4 +103,17 @@ public class Log {
     public static int[][] getRow4Log3() {
         return row4Log3;
     }
+
+    public static int getRow1Speed() {
+        return row1Speed;
+    }
+    public static int getRow2Speed() {
+        return row2Speed;
+    }
+    public static int getRow3Speed() {
+        return row3Speed;
+    }
+    public static int getRow4Speed() {
+        return row4Speed;
+    }
 }
