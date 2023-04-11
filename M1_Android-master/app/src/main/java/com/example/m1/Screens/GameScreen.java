@@ -586,6 +586,6 @@ public class GameScreen extends AppCompatActivity {
 
     // Implementation will change once logs are added.
     private static boolean checkWater(int row) {
-        return true;
+            return true;
     }
 }
