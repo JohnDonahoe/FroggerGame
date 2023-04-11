@@ -160,6 +160,11 @@ public class GameScreen extends AppCompatActivity {
         }
         roadUpdate();
         logUpdate();
+        onLog();
+    }
+
+    public boolean onLog() {
+        return (location[1] >= 0 || location[1] <= 4)
     }
 
     @Override
@@ -520,15 +525,14 @@ public class GameScreen extends AppCompatActivity {
         setContentView(R.layout.win_screen);
         finish();
     }
-
-
-
+    
     private void resetFrog() {
         sprite.setImageDrawable(null);                      // Erases old sprite
         location[0] = 10;
         location[1] = 4;                                    // Resets location
         sprite = imageDraws[location[0]][location[1]];      // Draws new sprite
         sprite.setImageDrawable(spriteDraw);                // Shows sprite on screen
+        onLog();
     }
 
     private void resetScore() {
