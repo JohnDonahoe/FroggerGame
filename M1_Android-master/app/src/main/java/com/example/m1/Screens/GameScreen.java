@@ -434,12 +434,14 @@ public class GameScreen extends AppCompatActivity {
         logTiles[Log.getRow1Log1()[0][0]][Log.getRow1Log1()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow1Log1()[1][0]][Log.getRow1Log1()[1][1]].setImageDrawable(logRight);
         logTiles[Log.getRow1Log1()[1][0]]
-            [Log.getRow1Log1()[1][1] + 1 < 8 ? Log.getRow1Log1()[1][1] + 1 : 0].setImageDrawable(null);
+            [Log.getRow1Log1()[1][1] + 1 < 8
+                ? Log.getRow1Log1()[1][1] + 1 : 0].setImageDrawable(null);
 
         logTiles[Log.getRow1Log2()[0][0]][Log.getRow1Log2()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow1Log2()[1][0]][Log.getRow1Log2()[1][1]].setImageDrawable(logRight);
         logTiles[Log.getRow1Log2()[1][0]]
-            [Log.getRow1Log2()[1][1] + 1 < 8 ? Log.getRow1Log2()[1][1] + 1 : 0].setImageDrawable(null);
+            [Log.getRow1Log2()[1][1] + 1 < 8
+                ? Log.getRow1Log2()[1][1] + 1 : 0].setImageDrawable(null);
 
         logTiles[Log.getRow1Log3()[0][0]][Log.getRow1Log3()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow1Log3()[1][0]][Log.getRow1Log3()[1][1]].setImageDrawable(logRight);
@@ -452,12 +454,14 @@ public class GameScreen extends AppCompatActivity {
         logTiles[Log.getRow2Log1()[0][0]][Log.getRow2Log1()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow2Log1()[1][0]][Log.getRow2Log1()[1][1]].setImageDrawable(logMiddle);
         logTiles[Log.getRow2Log1()[2][0]][Log.getRow2Log1()[2][1]].setImageDrawable(logRight);
-        logTiles[Log.getRow2Log1()[0][0]][Log.getRow2Log1()[0][1] - 1 > -1 ? Log.getRow2Log1()[0][1] - 1 : 7].setImageDrawable(null);
+        logTiles[Log.getRow2Log1()[0][0]][Log.getRow2Log1()[0][1] - 1
+                > -1 ? Log.getRow2Log1()[0][1] - 1 : 7].setImageDrawable(null);
 
         logTiles[Log.getRow2Log2()[0][0]][Log.getRow2Log2()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow2Log2()[1][0]][Log.getRow2Log2()[1][1]].setImageDrawable(logMiddle);
         logTiles[Log.getRow2Log2()[2][0]][Log.getRow2Log2()[2][1]].setImageDrawable(logRight);
-        logTiles[Log.getRow2Log2()[0][0]][Log.getRow2Log2()[0][1] - 1 > -1 ? Log.getRow2Log2()[0][1] - 1 : 7].setImageDrawable(null);
+        logTiles[Log.getRow2Log2()[0][0]][Log.getRow2Log2()[0][1] - 1
+                > -1 ? Log.getRow2Log2()[0][1] - 1 : 7].setImageDrawable(null);
 
 
 
@@ -466,12 +470,14 @@ public class GameScreen extends AppCompatActivity {
         logTiles[Log.getRow3Log1()[0][0]][Log.getRow3Log1()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow3Log1()[1][0]][Log.getRow3Log1()[1][1]].setImageDrawable(logMiddle);
         logTiles[Log.getRow3Log1()[2][0]][Log.getRow3Log1()[2][1]].setImageDrawable(logRight);
-        logTiles[Log.getRow3Log1()[2][0]][Log.getRow3Log1()[2][1] + 1 > 7 ? 0 : Log.getRow3Log1()[2][1] + 1].setImageDrawable(null);
+        logTiles[Log.getRow3Log1()[2][0]][Log.getRow3Log1()[2][1] + 1
+                > 7 ? 0 : Log.getRow3Log1()[2][1] + 1].setImageDrawable(null);
 
         logTiles[Log.getRow3Log2()[0][0]][Log.getRow3Log2()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow3Log2()[1][0]][Log.getRow3Log2()[1][1]].setImageDrawable(logMiddle);
         logTiles[Log.getRow3Log2()[2][0]][Log.getRow3Log2()[2][1]].setImageDrawable(logRight);
-        logTiles[Log.getRow3Log2()[2][0]][Log.getRow3Log2()[2][1] + 1 > 7 ? 0 : Log.getRow3Log2()[2][1] + 1].setImageDrawable(null);
+        logTiles[Log.getRow3Log2()[2][0]][Log.getRow3Log2()[2][1] + 1
+                > 7 ? 0 : Log.getRow3Log2()[2][1] + 1].setImageDrawable(null);
 
 
 
@@ -479,15 +485,16 @@ public class GameScreen extends AppCompatActivity {
 
         logTiles[Log.getRow4Log1()[0][0]][Log.getRow4Log1()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow4Log1()[1][0]][Log.getRow4Log1()[1][1]].setImageDrawable(logRight);
-        //logTiles[Log.getRow4Log1()[0][0]][Log.getRow4Log1()[0][1] - 1 > -1 ? Log.getRow4Log1()[0][1] - 1 : 7].setImageDrawable(null);
 
         logTiles[Log.getRow4Log2()[0][0]][Log.getRow4Log2()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow4Log2()[1][0]][Log.getRow4Log2()[1][1]].setImageDrawable(logRight);
-        logTiles[Log.getRow4Log2()[0][0]][Log.getRow4Log2()[0][1] - 1 > -1 ? Log.getRow4Log2()[0][1] - 1 : 7].setImageDrawable(null);
+        logTiles[Log.getRow4Log2()[0][0]][Log.getRow4Log2()[0][1] - 1
+                > -1 ? Log.getRow4Log2()[0][1] - 1 : 7].setImageDrawable(null);
 
         logTiles[Log.getRow4Log3()[0][0]][Log.getRow4Log3()[0][1]].setImageDrawable(logLeft);
         logTiles[Log.getRow4Log3()[1][0]][Log.getRow4Log3()[1][1]].setImageDrawable(logRight);
-        logTiles[Log.getRow4Log3()[0][0]][Log.getRow4Log3()[0][1] - 1 > -1 ? Log.getRow4Log3()[0][1] - 1 : 7].setImageDrawable(null);
+        logTiles[Log.getRow4Log3()[0][0]][Log.getRow4Log3()[0][1] - 1
+                > -1 ? Log.getRow4Log3()[0][1] - 1 : 7].setImageDrawable(null);
     }
 
     public void die() {
