@@ -173,7 +173,7 @@ public class Game {
         return highestScore;
     }
 
-    private boolean checkWater(int row, int col) {
+    public static boolean checkWater(int row, int col) {
         switch (row) {
             case 0:
                 if (Log.checkRow4(col)) {

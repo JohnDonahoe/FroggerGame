@@ -555,7 +555,7 @@ public class GameScreen extends AppCompatActivity {
         location[1] = 4;                                    // Resets location
         sprite = imageDraws[location[0]][location[1]];      // Draws new sprite
         sprite.setImageDrawable(spriteDraw);                // Shows sprite on screen
-        onLog();
+        //onLog();
     }
 
     private void resetScore() {

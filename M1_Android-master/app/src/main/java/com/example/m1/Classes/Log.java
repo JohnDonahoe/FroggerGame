@@ -122,11 +122,11 @@ public class Log {
     }
 
     public static boolean checkRow2(int col) {
-        return (col == row2Log1[0][1] || col == row2Log1[1][1] || col == row2Log2[0][1] || col == row2Log2[1][1]);
+        return (col == row2Log1[0][1] || col == row2Log1[1][1] || col == row2Log1[2][1] || col == row2Log2[0][1] || col == row2Log2[1][1] || col == row2Log2[2][1]);
     }
 
     public static boolean checkRow3(int col) {
-        return (col == row3Log1[0][1] || col == row3Log1[1][1] || col == row3Log2[0][1] || col == row3Log2[1][1]);
+        return (col == row3Log1[0][1] || col == row3Log1[1][1] || col == row3Log1[2][1] || col == row3Log2[0][1] || col == row3Log2[1][1] || col == row3Log2[2][1]);
     }
 
     public static boolean checkRow4(int col) {
