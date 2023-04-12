@@ -167,16 +167,27 @@ public class GameScreen extends AppCompatActivity {
     }
 
     public void playerUpdate(int row) {
-        if (location[0] == row) {
+        if (location[0] == row && (row == 1 || row == 3)) {
             if (location[1] == 0) {
                 die();
-            else {
+            } else {
                 sprite.setImageDrawable(null);
                 location[1]--;
                 sprite = imageDraws[location[0]][location[1]];
                 sprite.setImageDrawable(spriteDraw);
             }
-         }
+        }
+
+        if (location[0] == row && (row == 0 || row == 2)) {
+            if (location[1] == 7) {
+                die();
+            } else {
+                sprite.setImageDrawable(null);
+                location[1]++;
+                sprite = imageDraws[location[0]][location[1]];
+                sprite.setImageDrawable(spriteDraw);
+            }
+        }
     }
 
     @Override
@@ -600,27 +611,26 @@ public class GameScreen extends AppCompatActivity {
         }
     }
 
-    // Implementation will change once logs are added.
-    private static boolean checkWater(int row) {
+    private boolean checkWater(int row) {
         int col = location[1];
         switch (row) {
             case 0:
-                if (col == Log.getRow4Log1()[0][1] || col == Log.getRow4Log1()[1][1] || col == Log.getRow4Log2()[0][1] || col == Log.getRow4Log2()[1][1] || col == Log.getRow4Log3()[0][1] || col == Log.getRow4Log3()[1][1]) {
+                if (Log.checkRow4(col)) {
                     return false;
                 }
                 return true;
             case 1:
-                if (col == Log.getRow3Log1()[0][1] || col == Log.getRow3Log1()[1][1] || col == Log.getRow3Log2()[0][1] || col == Log.getRow3Log2()[1][1]) {
+                if (Log.checkRow3(col)) {
                     return false;
                 }
                 return true;
             case 2:
-                if (col == Log.getRow2Log1()[0][1] || col == Log.getRow2Log1()[1][1] || col == Log.getRow2Log2()[0][1] || col == Log.getRow2Log2()[1][1]) {
+                if (Log.checkRow2(col)) {
                     return false;
                 }
                 return true;
             case 3:
-                if (col == Log.getRow1Log1()[0][1] || col == Log.getRow1Log1()[1][1] || col == Log.getRow1Log2()[0][1] || col == Log.getRow1Log2()[1][1] || col == Log.getRow1Log3()[0][1] || col == Log.getRow1Log3()[1][1]) {
+                if (Log.checkRow1(col)) {
                     return false;
                 }
                 return true;
