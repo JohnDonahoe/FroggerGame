@@ -355,4 +355,20 @@ public class ExampleInstrumentedTest {
         assertTrue(checkRow4(1));
         assertFalse(checkRow4(5));
     }
+
+    @Test
+    public void testCheckWater() {
+        Game game = new Game();
+        assertTrue(Game.checkWater(0, 2));
+        assertFalse(Game.checkWater(0, 7));
+
+        assertTrue(Game.checkWater(1, 3));
+        assertFalse(Game.checkWater(1, 0));
+
+        assertTrue(Game.checkWater(2, 7));
+        assertFalse(Game.checkWater(2, 1));
+
+        assertTrue(Game.checkWater(3, 5));
+        assertFalse(Game.checkWater(3, 4));
+    }
 }
