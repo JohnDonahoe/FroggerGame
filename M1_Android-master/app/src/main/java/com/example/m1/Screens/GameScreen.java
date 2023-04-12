@@ -125,6 +125,7 @@ public class GameScreen extends AppCompatActivity {
         if (timer % 2 == 0) {
             Car.updateF1Cars();
             Log.updateRow3();
+            playerUpdate(1);
             if (checkDeath()) {
                 die();
             }
@@ -132,6 +133,7 @@ public class GameScreen extends AppCompatActivity {
 
         if (timer % 3 == 0) {
             Log.updateRow1();
+            playerUpdate(3);
             if (checkDeath()) {
                 die();
             }
@@ -139,6 +141,7 @@ public class GameScreen extends AppCompatActivity {
 
         if (timer % 4 == 0) {
             Log.updateRow2();
+            playerUpdate(2);
             if (checkDeath()) {
                 die();
             }
@@ -147,6 +150,7 @@ public class GameScreen extends AppCompatActivity {
         if (timer % 5 == 0) {
             Car.updatePinkCars();
             Log.updateRow4();
+            playerUpdate(0);
             if (checkDeath()) {
                 die();
             }
@@ -160,11 +164,19 @@ public class GameScreen extends AppCompatActivity {
         }
         roadUpdate();
         logUpdate();
-        onLog();
     }
 
-    public boolean onLog() {
-        return (location[1] >= 0 || location[1] <= 4)
+    public void playerUpdate(int row) {
+        if (location[0] == row) {
+            if (location[1] == 0) {
+                die();
+            else {
+                sprite.setImageDrawable(null);
+                location[1]--;
+                sprite = imageDraws[location[0]][location[1]];
+                sprite.setImageDrawable(spriteDraw);
+            }
+         }
     }
 
     @Override
