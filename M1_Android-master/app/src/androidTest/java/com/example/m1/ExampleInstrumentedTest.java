@@ -338,7 +338,7 @@ public class ExampleInstrumentedTest {
 
     //Sprint 5
     @Test
-    public void testCheckRows() {
+    public void atestCheckRows() {
         //Log positions Row 1: 0 1 3 4 6 7
         //              Row 2: 0 1 2 4 5 6
         //              Row 3: 0 1 2 4 5 6
@@ -371,5 +371,41 @@ public class ExampleInstrumentedTest {
 
         assertTrue(Game.checkWater(3, 5));
         assertFalse(Game.checkWater(3, 4));
+    }
+
+    @Test
+    public void testZRow1LogsMoveCorrectly() {
+        assertEquals(Log.getRow1Log1(), new int[][] {{3, 0}, {3, 1}});
+        assertEquals(Log.getRow1Log2(), new int[][] {{3, 3}, {3, 4}});
+        assertEquals(Log.getRow1Log3(), new int[][] {{3, 6}, {3, 7}});
+
+        Log.updateRow1();
+
+        assertEquals(Log.getRow1Log1(), new int[][] {{3, 7}, {3, 0}});
+        assertEquals(Log.getRow1Log2(), new int[][] {{3, 2}, {3, 3}});
+        assertEquals(Log.getRow1Log3(), new int[][] {{3, 5}, {3, 6}});
+
+        Log.updateRow1();
+
+        assertEquals(Log.getRow1Log1(), new int[][] {{3, 6}, {3, 7}});
+        assertEquals(Log.getRow1Log2(), new int[][] {{3, 1}, {3, 2}});
+        assertEquals(Log.getRow1Log3(), new int[][] {{3, 4}, {3, 5}});
+
+    }
+
+    @Test
+    public void testZRow2LogsMoveCorrectly() {
+        assertEquals(Log.getRow2Log1(), new int[][] {{2, 0}, {2, 1}, {2, 2}});
+        assertEquals(Log.getRow2Log2(), new int[][] {{2, 4}, {2, 5}, {2, 6}});
+
+        Log.updateRow2();
+
+        assertEquals(Log.getRow2Log1(), new int[][] {{2, 1}, {2, 2}, {2, 3}});
+        assertEquals(Log.getRow2Log2(), new int[][] {{2, 5}, {2, 6}, {2, 7}});
+
+        Log.updateRow2();
+
+        assertEquals(Log.getRow2Log1(), new int[][] {{2, 2}, {2, 3}, {2, 4}});
+        assertEquals(Log.getRow2Log2(), new int[][] {{2, 6}, {2, 7}, {2, 0}});
     }
 }
