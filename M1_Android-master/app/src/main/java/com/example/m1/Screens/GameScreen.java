@@ -203,6 +203,8 @@ public class GameScreen extends AppCompatActivity {
         case KeyEvent.KEYCODE_DPAD_UP:
             if (location[0] == 0) {
                 if (!goal1 && (location[1] == 0 || location[1] == 1)) {
+                    scoreNum += 500;
+                    score.setText(Integer.toString(scoreNum));
                     goal1 = true;
                     goalTiles[0].setImageDrawable(spriteDraw);
                     if (goal1 && goal2 && goal3 && goal4) {
@@ -212,6 +214,8 @@ public class GameScreen extends AppCompatActivity {
                     maxHeight = 10;
                     resetFrog();
                 } else if (!goal2 && (location[1] == 2 || location[1] == 3)) {
+                    scoreNum += 500;
+                    score.setText(Integer.toString(scoreNum));
                     goal2 = true;
                     goalTiles[1].setImageDrawable(spriteDraw);
                     if (goal1 && goal2 && goal3 && goal4) {
@@ -221,6 +225,8 @@ public class GameScreen extends AppCompatActivity {
                     maxHeight = 10;
                     resetFrog();
                 } else if (!goal3 && (location[1] == 4 || location[1] == 5)) {
+                    scoreNum += 500;
+                    score.setText(Integer.toString(scoreNum));
                     goal3 = true;
                     goalTiles[2].setImageDrawable(spriteDraw);
                     if (goal1 && goal2 && goal3 && goal4) {
@@ -229,6 +235,8 @@ public class GameScreen extends AppCompatActivity {
                     maxHeight = 10;
                     resetFrog();
                 } else if (!goal4 && (location[1] == 6 || location[1] == 7)) {
+                    scoreNum += 500;
+                    score.setText(Integer.toString(scoreNum));
                     goal4 = true;
                     goalTiles[3].setImageDrawable(spriteDraw);
                     if (goal1 && goal2 && goal3 && goal4) {
@@ -238,8 +246,9 @@ public class GameScreen extends AppCompatActivity {
                     resetFrog();
                 } else {
                     die();
+                    return false;
                 }
-                return false;
+                return true;
             }
             sprite.setImageDrawable(null);
             location[0]--;
