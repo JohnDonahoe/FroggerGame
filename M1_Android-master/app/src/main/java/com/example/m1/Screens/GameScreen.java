@@ -190,11 +190,55 @@ public class GameScreen extends AppCompatActivity {
         }
     }
 
+    private boolean goal1 = false;
+
+    private boolean goal2 = false;
+    private boolean goal3 = false;
+
+    private boolean goal4 = false;
+
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
         case KeyEvent.KEYCODE_DPAD_UP:
             if (location[0] == 0) {
+                if (!goal1 && (location[1] == 0 || location[1] == 1)) {
+                    goal1 = true;
+                    goalTiles[0].setImageDrawable(spriteDraw);
+                    if (goal1 && goal2 && goal3 && goal4) {
+                        win();
+                    }
+
+                    maxHeight = 10;
+                    resetFrog();
+                } else if (!goal2 && (location[1] == 2 || location[1] == 3)) {
+                    goal2 = true;
+                    goalTiles[1].setImageDrawable(spriteDraw);
+                    if (goal1 && goal2 && goal3 && goal4) {
+                        win();
+                    }
+
+                    maxHeight = 10;
+                    resetFrog();
+                } else if (!goal3 && (location[1] == 4 || location[1] == 5)) {
+                    goal3 = true;
+                    goalTiles[2].setImageDrawable(spriteDraw);
+                    if (goal1 && goal2 && goal3 && goal4) {
+                        win();
+                    }
+                    maxHeight = 10;
+                    resetFrog();
+                } else if (!goal4 && (location[1] == 6 || location[1] == 7)) {
+                    goal4 = true;
+                    goalTiles[3].setImageDrawable(spriteDraw);
+                    if (goal1 && goal2 && goal3 && goal4) {
+                        win();
+                    }
+                    maxHeight = 10;
+                    resetFrog();
+                } else {
+                    die();
+                }
                 return false;
             }
             sprite.setImageDrawable(null);
