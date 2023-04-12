@@ -334,4 +334,25 @@ public class ExampleInstrumentedTest {
         assertEquals(6, game.getFrog().getPosX());
         assertEquals(12, game.getFrog().getPosY());
     }
+
+    //Sprint 5
+    @Test
+    public void testCheckRows() {
+        //Log positions Row 1: 0 1 3 4 6 7
+        //              Row 2: 0 1 2 4 5 6
+        //              Row 3: 0 1 2 4 5 6
+        //              Row 4: 0 1 3 4 6 7
+
+        assertTrue(checkRow1(3));
+        assertFalse(checkRow1(5));
+
+        assertTrue(checkRow2(0));
+        assertFalse(checkRow2(3));
+
+        assertTrue(checkRow3(2));
+        assertFalse(checkRow3(7));
+
+        assertTrue(checkRow4(1));
+        assertFalse(checkRow4(5));
+    }
 }
