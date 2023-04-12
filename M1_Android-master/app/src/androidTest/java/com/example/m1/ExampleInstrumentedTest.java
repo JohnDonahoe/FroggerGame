@@ -10,6 +10,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import com.example.m1.Classes.Frog;
 import com.example.m1.Classes.Game;
 import com.example.m1.Classes.Car;
+import com.example.m1.Classes.Log;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -343,17 +344,17 @@ public class ExampleInstrumentedTest {
         //              Row 3: 0 1 2 4 5 6
         //              Row 4: 0 1 3 4 6 7
 
-        assertTrue(checkRow1(3));
-        assertFalse(checkRow1(5));
+        assertTrue(Log.checkRow1(3));
+        assertFalse(Log.checkRow1(5));
 
-        assertTrue(checkRow2(0));
-        assertFalse(checkRow2(3));
+        assertTrue(Log.checkRow2(0));
+        assertFalse(Log.checkRow2(3));
 
-        assertTrue(checkRow3(2));
-        assertFalse(checkRow3(7));
+        assertTrue(Log.checkRow3(2));
+        assertFalse(Log.checkRow3(7));
 
-        assertTrue(checkRow4(1));
-        assertFalse(checkRow4(5));
+        assertTrue(Log.checkRow4(1));
+        assertFalse(Log.checkRow4(5));
     }
 
     @Test
