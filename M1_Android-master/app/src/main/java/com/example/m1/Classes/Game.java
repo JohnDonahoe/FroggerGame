@@ -175,28 +175,28 @@ public class Game {
 
     public static boolean checkWater(int row, int col) {
         switch (row) {
-            case 0:
-                if (Log.checkRow4(col)) {
-                    return false;
-                }
-                return true;
-            case 1:
-                if (Log.checkRow3(col)) {
-                    return false;
-                }
-                return true;
-            case 2:
-                if (Log.checkRow2(col)) {
-                    return false;
-                }
-                return true;
-            case 3:
-                if (Log.checkRow1(col)) {
-                    return false;
-                }
-                return true;
-            default:
+        case 0:
+            if (Log.checkRow4(col)) {
                 return false;
+            }
+            return true;
+        case 1:
+            if (Log.checkRow3(col)) {
+                return false;
+            }
+            return true;
+        case 2:
+            if (Log.checkRow2(col)) {
+                return false;
+            }
+            return true;
+        case 3:
+            if (Log.checkRow1(col)) {
+                return false;
+            }
+            return true;
+        default:
+            return false;
         }
     }
 }
