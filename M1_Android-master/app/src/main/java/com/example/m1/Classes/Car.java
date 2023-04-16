@@ -136,4 +136,57 @@ public class Car {
         f1Car4[1] = (f1Car4[1] + 1) % 8;
     }
 
+    public boolean checkCollision(int row, int col) {
+        switch (row) {
+            case 5:
+                if (checkRow5(col)) {
+                    return true;
+                }
+                return false;
+            case 6:
+                if (checkRow6(col)) {
+                    return true;
+                }
+                return false;
+            case 7:
+                if (checkRow7(col)) {
+                    return true;
+                }
+                return false;
+            case 8:
+                if (checkRow8(col)) {
+                    return true;
+                }
+                return false;
+            case 9:
+                if (checkRow9(col)) {
+                    return true;
+                }
+                return false;
+            default:
+                return false;
+        }
+    }
+
+    private static boolean checkRow5(int col) {
+        return (col == truck1[0][1] || col == truck1[1][1] || col == truck2[0][1]
+                || col == truck2[1][1]);
+    }
+
+    private static boolean checkRow6(int col) {
+        return (col == f1Car3[1] || col == f1Car4[1]);
+    }
+
+    private static boolean checkRow7(int col) {
+        return (col == pinkCar4[1] || col == pinkCar5[1]);
+    }
+
+    private static boolean checkRow8(int col) {
+        return (col == pinkCar1[1] || col == pinkCar2[1]
+                || col == pinkCar3[1]);
+    }
+
+    private static boolean checkRow9(int col) {
+        return (col == f1Car1[1] || col == f1Car2[1]);
+    }
 }
