@@ -136,7 +136,7 @@ public class Car {
         f1Car4[1] = (f1Car4[1] + 1) % 8;
     }
 
-    public boolean checkCollision(int row, int col) {
+    public static boolean checkCollision(int row, int col) {
         switch (row) {
             case 5:
                 if (checkRow5(col)) {
