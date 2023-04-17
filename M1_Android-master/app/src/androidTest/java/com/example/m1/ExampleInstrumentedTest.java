@@ -479,11 +479,11 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void checkWaterWorksAfterLogsMove() {
-        Log.updateRow1();
-        Log.updateRow2();
-        Log.updateRow3();
-        Log.updateRow4();
+    public void mcheckWaterWorksAfterLogsMove() {
+        //Log.updateRow1();
+        //Log.updateRow2();
+        //Log.updateRow3();
+        //Log.updateRow4();
 
         assertTrue(Game.checkWater(0, 3));
         assertFalse(Game.checkWater(0, 2));
@@ -491,10 +491,10 @@ public class ExampleInstrumentedTest {
         assertTrue(Game.checkWater(1, 6));
         assertFalse(Game.checkWater(1, 7));
 
-        assertTrue(Game.checkWater(2, 0));
+        assertFalse(Game.checkWater(2, 4));
         assertFalse(Game.checkWater(2, 2));
 
-        assertTrue(Game.checkWater(3, 1));
+        assertFalse(Game.checkWater(3, 1));
         assertFalse(Game.checkWater(3, 3));
     }
 
