@@ -11,6 +11,7 @@ import com.example.m1.Classes.Frog;
 import com.example.m1.Classes.Game;
 import com.example.m1.Classes.Car;
 import com.example.m1.Classes.Log;
+import jdk.internal.vm.annotation.ReservedStackAccess;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -407,5 +408,29 @@ public class ExampleInstrumentedTest {
 
         assertEquals(Log.getRow2Log1(), new int[][] {{2, 2}, {2, 3}, {2, 4}});
         assertEquals(Log.getRow2Log2(), new int[][] {{2, 6}, {2, 7}, {2, 0}});
+    }
+
+
+    @Test
+    public void testLogsInSameRowHaveSameSpeed() {
+        assertNotEquals(Log.getRow1Speed(), Log.getRow2Speed());
+        assertNotEquals(Log.getRow2Speed(), Log.getRow3Speed());
+        assertNotEquals(Log.getRow1Speed(), Log.getRow3Speed());
+    }
+
+    @Test
+    public void dontLoseLifeOnLog() {
+        Game game = new Game();
+        game.setLives(3);
+        game.setFrog(new Frog());
+        Game.checkWater(3,4);
+        assertEquals(3, game.getLives());
+        Game.checkWater(2,1);
+        assertEquals(3, game.getLives());
+        Game.hitCar();
+        Game.checkWater(3,4);
+        assertEquals(2, game.getLives());
+
+
     }
 }
