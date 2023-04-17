@@ -423,12 +423,12 @@ public class ExampleInstrumentedTest {
         Game game = new Game();
         game.setLives(3);
         game.setFrog(new Frog());
-        Game.checkWater(3,4);
+        game.checkWater(3,4);
         assertEquals(3, game.getLives());
-        Game.checkWater(2,1);
+        game.checkWater(2,1);
         assertEquals(3, game.getLives());
-        Game.hitCar();
-        Game.checkWater(3,4);
+        game.hitCar();
+        game.checkWater(3,4);
         assertEquals(2, game.getLives());
 
 
