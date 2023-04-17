@@ -1,7 +1,6 @@
 package com.example.m1;
 
 import android.content.Context;
-import android.app.Instrumentation;
 
 import android.view.KeyEvent;
 import androidx.test.platform.app.InstrumentationRegistry;
@@ -11,7 +10,6 @@ import com.example.m1.Classes.Frog;
 import com.example.m1.Classes.Game;
 import com.example.m1.Classes.Car;
 import com.example.m1.Classes.Log;
-import jdk.internal.vm.annotation.ReservedStackAccess;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

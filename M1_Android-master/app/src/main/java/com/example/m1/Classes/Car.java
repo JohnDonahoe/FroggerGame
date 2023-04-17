@@ -138,33 +138,33 @@ public class Car {
 
     public static boolean checkCollision(int row, int col) {
         switch (row) {
-            case 5:
-                if (checkRow5(col)) {
-                    return true;
-                }
-                return false;
-            case 6:
-                if (checkRow6(col)) {
-                    return true;
-                }
-                return false;
-            case 7:
-                if (checkRow7(col)) {
-                    return true;
-                }
-                return false;
-            case 8:
-                if (checkRow8(col)) {
-                    return true;
-                }
-                return false;
-            case 9:
-                if (checkRow9(col)) {
-                    return true;
-                }
-                return false;
-            default:
-                return false;
+        case 5:
+            if (checkRow5(col)) {
+                return true;
+            }
+            return false;
+        case 6:
+            if (checkRow6(col)) {
+                return true;
+            }
+            return false;
+        case 7:
+            if (checkRow7(col)) {
+                return true;
+            }
+            return false;
+        case 8:
+            if (checkRow8(col)) {
+                return true;
+            }
+            return false;
+        case 9:
+            if (checkRow9(col)) {
+                return true;
+            }
+            return false;
+        default:
+            return false;
         }
     }
 
