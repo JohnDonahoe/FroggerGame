@@ -431,4 +431,31 @@ public class ExampleInstrumentedTest {
 
 
     }
+
+    @Test
+    public void testZRow3LogsMoveCorrectly() {
+        assertEquals(Log.getRow3Log1(), new int[][] {{1, 0}, {1, 1}, {1, 2}});
+        assertEquals(Log.getRow3Log2(), new int[][] {{1, 4}, {1, 5}, {1, 6}});
+
+        Log.updateRow3();
+
+        assertEquals(Log.getRow3Log1(), new int[][] {{1, 7}, {1, 0}, {1, 1}});
+        assertEquals(Log.getRow3Log2(), new int[][] {{1, 3}, {1, 4}, {1, 5}});
+    }
+
+
+
+
+    @Test
+    public void testZRow4LogsMoveCorrectly() {
+        assertEquals(Log.getRow4Log1(), new int[][] {{0, 0}, {0, 1}});
+        assertEquals(Log.getRow4Log2(), new int[][] {{0, 3}, {0, 4}});
+        assertEquals(Log.getRow4Log3(), new int[][] {{0, 6}, {0, 7}});
+
+        Log.updateRow4();
+
+        assertEquals(Log.getRow4Log1(), new int[][] {{0, 1}, {0, 2}});
+        assertEquals(Log.getRow4Log2(), new int[][] {{0, 4}, {0, 5}});
+        assertEquals(Log.getRow4Log3(), new int[][] {{0, 7}, {0, 0}});
+    }
 }
