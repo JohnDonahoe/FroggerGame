@@ -458,4 +458,46 @@ public class ExampleInstrumentedTest {
         assertEquals(Log.getRow4Log2(), new int[][] {{0, 4}, {0, 5}});
         assertEquals(Log.getRow4Log3(), new int[][] {{0, 7}, {0, 0}});
     }
+
+    @Test
+    public void goalTilePoints() {
+        Game game = new Game();
+        //simulates the frog moving up one by one until it reaches the goal tile
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 0, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 1, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 2, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 3, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 4, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 5, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 6, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 7, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 8, 10);
+        game.score(KeyEvent.KEYCODE_DPAD_UP, 9, 10);
+
+        //should have 300 points at the end
+        assertEquals(game.getScore(), 300);
+    }
+
+    @Test
+    public void checkWaterWorksAfterLogsMove() {
+        Log.updateRow1();
+        Log.updateRow2();
+        Log.updateRow3();
+        Log.updateRow4();
+
+        assertTrue(Game.checkWater(0, 3));
+        assertFalse(Game.checkWater(0, 2));
+
+        assertTrue(Game.checkWater(1, 6));
+        assertFalse(Game.checkWater(1, 7));
+
+        assertTrue(Game.checkWater(2, 0));
+        assertFalse(Game.checkWater(2, 2));
+
+        assertTrue(Game.checkWater(3, 1));
+        assertFalse(Game.checkWater(3, 3));
+    }
+
+
+
 }
