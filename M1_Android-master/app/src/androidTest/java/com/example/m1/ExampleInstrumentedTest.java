@@ -337,7 +337,7 @@ public class ExampleInstrumentedTest {
 
     //Sprint 5
     @Test
-    public void atestCheckRows() {
+    public void aatestCheckRows() {
         //Log positions Row 1: 0 1 3 4 6 7
         //              Row 2: 0 1 2 4 5 6
         //              Row 3: 0 1 2 4 5 6
@@ -433,7 +433,7 @@ public class ExampleInstrumentedTest {
     }
 
     @Test
-    public void testZRow3LogsMoveCorrectly() {
+    public void ZtestZRow3LogsMoveCorrectly() {
         assertEquals(Log.getRow3Log1(), new int[][] {{1, 0}, {1, 1}, {1, 2}});
         assertEquals(Log.getRow3Log2(), new int[][] {{1, 4}, {1, 5}, {1, 6}});
 
@@ -447,7 +447,7 @@ public class ExampleInstrumentedTest {
 
 
     @Test
-    public void testZRow4LogsMoveCorrectly() {
+    public void ZtestZRow4LogsMoveCorrectly() {
         assertEquals(Log.getRow4Log1(), new int[][] {{0, 0}, {0, 1}});
         assertEquals(Log.getRow4Log2(), new int[][] {{0, 3}, {0, 4}});
         assertEquals(Log.getRow4Log3(), new int[][] {{0, 6}, {0, 7}});
