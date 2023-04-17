@@ -131,7 +131,7 @@ public class Game {
         lives--;
     }
 
-    public boolean hitWater() {
+    public boolean takeLifeUpdateHighscoreAndResetPos() {
         if (lives > 1) {
             lives--;
             if (score > highestScore) {

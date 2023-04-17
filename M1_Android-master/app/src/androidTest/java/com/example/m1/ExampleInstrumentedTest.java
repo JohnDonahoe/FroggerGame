@@ -232,7 +232,7 @@ public class ExampleInstrumentedTest {
         Game game = new Game();
         game.setLives(3);
         //  returns true when they are not out of lives
-        assertTrue(game.hitWater());
+        assertTrue(game.takeLifeUpdateHighscoreAndResetPos());
         assertEquals(2, game.getLives());
     }
 
@@ -241,7 +241,7 @@ public class ExampleInstrumentedTest {
         Game game = new Game();
         game.setLives(3);
         game.setScore(30);
-        game.hitWater();
+        game.takeLifeUpdateHighscoreAndResetPos();
         assertEquals(0, game.getTheScore());
     }
 
@@ -268,7 +268,7 @@ public class ExampleInstrumentedTest {
         Game game = new Game();
         game.setLives(1);
         //returns false when out of lives for the end Game Screen ti be shown
-        assertFalse(game.hitWater());
+        assertFalse(game.takeLifeUpdateHighscoreAndResetPos());
     }
 
     @Test
@@ -284,11 +284,11 @@ public class ExampleInstrumentedTest {
         Game game = new Game();
         game.setLives(3);
         game.setScore(60);
-        game.hitWater();
+        game.takeLifeUpdateHighscoreAndResetPos();
         assertEquals(0, game.getTheScore());
         assertEquals(60, game.getHighestScore());
         game.setScore(30);
-        game.hitWater();
+        game.takeLifeUpdateHighscoreAndResetPos();
         assertEquals(60, game.getHighestScore());
     }
 
@@ -310,7 +310,7 @@ public class ExampleInstrumentedTest {
         x = game.getFrog().getPosX();
         y = game.getFrog().getPosY();
         game.getFrog().moveLeft();
-        game.hitWater();
+        game.takeLifeUpdateHighscoreAndResetPos();
         assertEquals(x, game.getFrog().getPosX());
         assertEquals(y, game.getFrog().getPosY());
     }
@@ -320,7 +320,7 @@ public class ExampleInstrumentedTest {
         Game game = new Game();
         game.setLives(3);
         game.getFrog().moveLeft();
-        game.hitWater();
+        game.takeLifeUpdateHighscoreAndResetPos();
         assertEquals(6, game.getFrog().getPosX());
         assertEquals(12, game.getFrog().getPosY());
     }
